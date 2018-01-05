@@ -11,7 +11,10 @@ import { DnaService } from './services/dna.service';
 export class AppComponent implements OnInit{
 
   title = 'critter farm';
-  babe: object;
+  babe = {
+    dna: null,
+    eyes: null
+  };
   eyes;
 
   constructor( private dnaService: DnaService ) {}
