@@ -1,0 +1,139 @@
+.creature {
+  width: 200px;
+  height: 240px;
+  margin: 0 auto;
+}
+
+#container {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.lichaam {
+  width: 100px;
+  height: 150px;
+  background-color: GreenYellow;
+  border-radius: 95% 95% 50% 50%;
+  margin: 0 auto;
+  margin-top: 0px;
+}
+
+.leaf {
+  width: 35px;
+  height: 35px;
+  background: #3F6B1B;
+  z-index: -10;
+  margin-left: 68px;
+  margin-top: 10px;
+  border-radius: 90% 0 90% 0;
+  -webkit-transform: rotate(-90deg);
+}
+
+.leafline {
+  width: 5px;
+  height: 35px;
+  background: #3F6B1B;
+  margin: 0 auto;
+}
+
+.eye {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  margin-top: 50px;
+  margin-left: 20px;
+  position: absolute;
+}
+.eye .eyeleft {
+  margin-left: 50px;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+}
+
+.mouth {
+  width: 50px;
+  height: 20px;
+  margin-left: 25px;
+  background-color: black;
+  margin-top: 70px;
+  position: absolute;
+  border-radius: 50% 50% 50% 50%;
+}
+
+.feet {
+  width: 15px;
+  height: 20px;
+  background-color: GreenYellow;
+  margin-left: 63px;
+  border-radius: 0% 0% 50% 50%;
+}
+.feet .feetleft {
+  width: 15px;
+  height: 20px;
+  background-color: GreenYellow;
+  margin-left: 58px;
+  margin-top: -10px;
+  border-radius: 0% 0% 50% 50%;
+}
+
+.arms {
+  width: 5px;
+  height: 10px;
+  background-color: GreenYellow;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  margin: 0 auto;
+  margin-top: -50px;
+  margin-left: 70px;
+  border-radius: 0% 0% 50% 50%;
+}
+.arms .armleft {
+  width: 5px;
+  height: 10px;
+  background-color: GreenYellow;
+  margin: 0 auto;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  margin-top: -50px;
+  margin-left: 45px;
+  border-radius: 0% 0% 50% 50%;
+}
+
+.eye, .eyeleft {
+  -webkit-animation-name: blink;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 50%;
+
+  animation-name: blink;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform-origin: 50%;
+}
+
+@-webkit-keyframes blink {
+  0% { -webkit-transform: scaleX(1) scaleY(1); }
+  1% { -webkit-transform: scaleX(1.3) scaleY(0.1); }
+  2% { -webkit-transform: scaleX(1) scaleY(1); }
+  60% { -webkit-transform: scaleX(1) scaleY(1); }
+  61% { -webkit-transform: scaleX(1.3) scaleY(0.1);}
+  62% { -webkit-transform: scaleX(1) scaleY(1); }
+  100% { -webkit-transform: scaleX(1) scaleY(1); }
+}
+
+
+@keyframes blink {
+  0% { transform: scaleX(1) scaleY(1); }
+  1% { transform: scaleX(1.3) scaleY(0.1); }
+  2% { transform: scaleX(1) scaleY(1); }
+  60% { transform: scaleX(1) scaleY(1); }
+  61% { transform: scaleX(1.3) scaleY(0.1);}
+  62% { transform: scaleX(1) scaleY(1); }
+  100% { transform: scaleX(1) scaleY(1); }
+}
