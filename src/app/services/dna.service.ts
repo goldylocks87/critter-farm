@@ -59,7 +59,7 @@ export class DnaService {
     console.log( '~~~~~' );
     console.log( '' );
 
-    return babes[0].eyes;
+    return babes[0];
   }
 
 }

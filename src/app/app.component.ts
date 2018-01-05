@@ -11,7 +11,8 @@ import { DnaService } from './services/dna.service';
 export class AppComponent implements OnInit{
 
   title = 'critter farm';
-  eyes: string;
+  babe: object;
+  eyes;
 
   constructor( private dnaService: DnaService ) {}
 
@@ -21,12 +22,14 @@ export class AppComponent implements OnInit{
 
   onSubmit(form: NgForm) {
     const value = form.value;
-    this.eyes = this.dnaService.createPunnet( value.mom, value.dad );
+    this.babe = this.dnaService.createPunnet( value.mom, value.dad );
+    console.log(this.babe);
+    this.eyes = this.babe['eyes'];
   }
 
   getEyeColor() {
-    if( !this.eyes ) return 'black';
-    else return this.eyes;
+    if( !this.babe ) return 'black';
+    else return this.babe.eyes;
   }
 
 }

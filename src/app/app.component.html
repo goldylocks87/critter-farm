@@ -10,7 +10,8 @@
           <select id="mom"
                   class="form-control"
                   name="mom"
-                  ngModel >
+                  ngModel
+                  required >
             <option value="AA" selected>Indigo (AA)</option>
             <option value="Aa">Indigo + Blue recessive (Aa)</option>
             <option value="aa">Blue (aa)</option>
@@ -22,7 +23,8 @@
           <select id="dad"
                   class="form-control"
                   name="dad"
-                  ngModel >
+                  ngModel
+                  required >
             <option value="AA" selected>Indigo (AA)</option>
             <option value="Aa">Indigo + Blue recessive (Aa)</option>
             <option value="aa">Blue (aa)</option>
@@ -35,7 +37,8 @@
         <div class="col-xs-2">
           <button class="btn btn-success"
                   type="submit"
-                  class="btn btn-success" >Do Sex</button>
+                  class="btn btn-success"
+                  [disabled]="!f.valid" >Do Sex</button>
         </div>
 
       </div>
@@ -63,6 +66,12 @@
           </div>
 
         </div>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="babe">
+      <div class="col-sm-6 col-xs-10">
+          <p class="text-center">This babe has <strong>{{ babe.eyes }}</strong> eyes and the '<strong>{{ babe.dna }}</strong>' gene.</p>
       </div>
     </div>
 
