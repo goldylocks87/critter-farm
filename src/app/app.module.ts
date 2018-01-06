@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { DnaService } from './services/dna.service';
 import { AppRoutingModule } from './app.routes';
+import { StorkService } from './services/stork.service';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { AppRoutingModule } from './app.routes';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [DnaService],
+  providers: [DnaService, StorkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

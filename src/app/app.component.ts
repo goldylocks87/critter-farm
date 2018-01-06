@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
   title = 'critter farm';
   babe = {
     dna: null,
-    eyes: null
+    eyeColor: null
   };
   eyes;
 
@@ -27,12 +27,12 @@ export class AppComponent implements OnInit{
     const value = form.value;
     this.babe = this.dnaService.createPunnet( value.mom, value.dad );
     console.log(this.babe);
-    this.eyes = this.babe['eyes'];
+    this.eyes = this.babe['eyeColor'];
   }
 
   getEyeColor() {
     if( !this.babe ) return 'black';
-    else return this.babe.eyes;
+    else return this.babe.eyeColor;
   }
 
 }

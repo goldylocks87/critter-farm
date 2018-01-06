@@ -12,9 +12,9 @@
                   name="mom"
                   ngModel
                   required >
-            <option value="AA" selected>Indigo (AA)</option>
-            <option value="Aa">Indigo + Blue recessive (Aa)</option>
-            <option value="aa">Blue (aa)</option>
+            <option value="0000" selected>Purple (AA)</option>
+            <option value="0001">Purple + Blue recessive (Aa)</option>
+            <option value="0101">Blue (aa)</option>
           </select>
         </div>
 
@@ -25,9 +25,9 @@
                   name="dad"
                   ngModel
                   required >
-            <option value="AA" selected>Indigo (AA)</option>
-            <option value="Aa">Indigo + Blue recessive (Aa)</option>
-            <option value="aa">Blue (aa)</option>
+            <option value="0000" selected>Purple (AA)</option>
+            <option value="0001">Purple + Blue recessive (Aa)</option>
+            <option value="0101">Blue (aa)</option>
           </select>
         </div>
 
@@ -50,15 +50,16 @@
 
           <div class="creature">
             <div class="leaf"></div>
+            <div class="babeleaf"></div>
             <div class="leafline"></div>
             <div class="lichaam">
               <div class="eye" [style.background-color]="getEyeColor()">
                 <div class="eyeleft" [style.background-color]="getEyeColor()"></div>
               </div>
               <div class="mouth"></div>
-            </div>
-            <div class="feet">
-              <div class="feetleft"></div>
+              <div class="feet">
+                <div class="feetleft"></div>
+              </div>
             </div>
             <div class="arms">
                 <div class="armleft"></div>
@@ -69,9 +70,9 @@
       </div>
     </div>
 
-    <div class="row" *ngIf="babe.eyes">
+    <div class="row" *ngIf="babe.eyeColor">
       <div class="col-sm-6 col-xs-10">
-          <p class="text-center">This babe has <strong>{{ babe.eyes }}</strong> eyes and the '<strong>{{ babe.dna }}</strong>' gene.</p>
+          <p class="text-center">This babe has <strong>{{ babe.eyeColor === '#965dc0'? 'Purple' : 'Blue' }}</strong> eyes and the '<strong>{{ babe.dna }}</strong>' gene.</p>
       </div>
     </div>
 
