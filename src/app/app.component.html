@@ -5,8 +5,19 @@
     <form (ngSubmit)="onSubmit(f)" #f="ngForm" style="margin: 1rem;">
       <div class="row">
 
-        <div class="col-sm-3 col-xs-5">
-          <label for="mom">Moms Eye Gene</label>
+        <div class="col-sm-6 col-xs-12">
+          <label for="dna">Type in some DNA! (1's & 0's)</label>
+          <input id="dna"
+                  class="form-control"
+                  name="dna"
+                  type="text"
+                  maxlength="8"
+                  minlength="8"
+                  ngModel
+                  required >
+
+        <!-- <div class="col-sm-3 col-xs-6">
+          <label for="mom">Moms Eye Color</label>
           <select id="mom"
                   class="form-control"
                   name="mom"
@@ -18,8 +29,8 @@
           </select>
         </div>
 
-        <div class="col-sm-3 col-xs-5">
-          <label for="dad">Dads Eye Gene</label>
+        <div class="col-sm-3 col-xs-6">
+          <label for="dad">Dads Eye Color</label>
           <select id="dad"
                   class="form-control"
                   name="dad"
@@ -32,6 +43,37 @@
         </div>
 
       </div>
+      <div class="row">
+
+        <div class="col-sm-3 col-xs-6">
+          <label for="mombody">Moms Body Color</label>
+          <select id="mombody"
+                  class="form-control"
+                  name="mombody"
+                  ngModel
+                  required >
+            <option value="0000" selected>Green</option>
+            <option value="0001">Yellow</option>
+            <option value="0101">Blue</option>
+          </select>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+          <label for="dadbody">Dads Body Color</label>
+          <select id="dadbody"
+                  class="form-control"
+                  name="dadbody"
+                  ngModel
+                  required >
+            <option value="0000" selected>Green</option>
+            <option value="0001">Yellow</option>
+            <option value="0101">Blue</option>
+          </select>
+        </div> -->
+
+        </div>
+      </div>
+
       <div class="row" style="margin-top: 1rem;">
 
         <div class="col-xs-2">
@@ -45,17 +87,17 @@
     </form>
 
     <div class="row">
-      <div class="col-sm-6 col-xs-10">
+      <div class="col-sm-6 col-xs-12">
         <div id="container">
 
           <div class="creature">
             <div class="leaf"></div>
             <div class="babeleaf"></div>
             <div class="leafline"></div>
-            <div class="eye" [style.background-color]="getEyeColor()">
-              <div class="eyeleft" [style.background-color]="getEyeColor()"></div>
+            <div class="eye" [style.background-color]="this.babe.eyeColor">
+              <div class="eyeleft"></div>
             </div>
-            <div class="lichaam" [style.background-color]="body">
+            <div class="lichaam" [style.background-color]="this.babe.bodyColor">
               <div class="mouth"></div>
               <div class="feet">
                 <div class="feetleft"></div>
@@ -70,9 +112,15 @@
       </div>
     </div>
 
-    <div class="row" *ngIf="babe.eyeColor">
-      <div class="col-sm-6 col-xs-10">
-          <p class="text-center">This babe has <strong>{{ babe.eyeColor === '#965dc0'? 'Purple' : 'Blue' }}</strong> eyes and the '<strong>{{ babe.dna }}</strong>' gene.</p>
+    <div class="row" *ngIf="babe">
+      <div class="col-sm-6 col-xs-12">
+          <h3 class="text-center">This babe's info.</h3>
+          <p class="text-center">
+            <strong>DNA</strong>: {{ babe.dna }}<br>
+            <strong>Gene List</strong>: {{ babe.geneList }}<br>
+            <strong>Eye Color</strong>: {{ babe.eyeColor }}<br>
+            <strong>Body Color</strong>: {{ babe.bodyColor }}<br>
+          </p>
       </div>
     </div>
 
