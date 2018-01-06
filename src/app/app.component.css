@@ -14,7 +14,7 @@
 .lichaam {
   width: 100px;
   height: 150px;
-  background-color: rgb(158, 198, 94);
+  background-color: #9ec65e;
   border-radius: 95% 95% 50% 50%;
   margin: 0 auto;
   margin-top: 0px;
@@ -55,7 +55,7 @@
   background-color: black;
   border-radius: 50%;
   margin-top: 50px;
-  margin-left: 20px;
+  margin-left: 69px;
   position: absolute;
 }
 .eye .eyeleft {
