@@ -10,6 +10,7 @@ export class Critter {
               public geneList?: string[],
               public eyeColor?: string,
               public bodyColor?: string,
+              public sex?: string,
               public isMutant?: boolean) {
 
     // so that we dont have to provide the service in the constructor when creating critters
@@ -25,6 +26,7 @@ export class Critter {
     this.eyeColor = this.dnaService.getEyeColor( this.geneList[0] );
     this.bodyColor = this.dnaService.getBodyColor( this.geneList[1] );
     this.isMutant = this.checkForMutation();
+    this.sex = this.dnaService.determineSex();
   }
 
   private checkForMutation() {

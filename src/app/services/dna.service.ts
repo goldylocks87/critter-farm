@@ -11,6 +11,10 @@ export class DnaService {
 
   }
 
+  public determineSex() {
+    return Math.floor(Math.random() * 2) === 1 ? 'male' : 'female';
+  }
+
   public getEyeColor( gene: string ) {
     if( gene.indexOf('A') !== -1 && gene.indexOf('B') !== -1 ) {
       return '#965dc0'; // dark green
@@ -50,8 +54,10 @@ export class DnaService {
     return genes;
   }
 
-  private chunk( dna: string, length: number ) {
-    return dna.match( new RegExp('.{1,' + length + '}', 'g') );
+  // private utilities
+
+  private createDnaList( dna: string ) {
+    return this.chunk( dna, 4 );
   }
 
   private getGene( allel: string ) {
@@ -74,9 +80,11 @@ export class DnaService {
     }
   }
 
-  private createDnaList( dna: string ) {
-    return this.chunk( dna, 4 );
+  private chunk( dna: string, length: number ) {
+    return dna.match( new RegExp('.{1,' + length + '}', 'g') );
   }
+
+
 
   // createPunnet( momDNA: string, dadDNA: string ) {
 
