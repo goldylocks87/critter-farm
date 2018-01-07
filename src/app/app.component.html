@@ -16,8 +16,7 @@
                   ngModel
                   required >
 
-        <!-- <div class="col-sm-3 col-xs-6">
-          <label for="mom">Moms Eye Color</label>
+        <!-- <label for="mom">Moms Eye Color</label>
           <select id="mom"
                   class="form-control"
                   name="mom"
@@ -26,48 +25,6 @@
             <option value="0000" selected>Purple (AA)</option>
             <option value="0001">Purple + Blue recessive (Aa)</option>
             <option value="0101">Blue (aa)</option>
-          </select>
-        </div>
-
-        <div class="col-sm-3 col-xs-6">
-          <label for="dad">Dads Eye Color</label>
-          <select id="dad"
-                  class="form-control"
-                  name="dad"
-                  ngModel
-                  required >
-            <option value="0000" selected>Purple (AA)</option>
-            <option value="0001">Purple + Blue recessive (Aa)</option>
-            <option value="0101">Blue (aa)</option>
-          </select>
-        </div>
-
-      </div>
-      <div class="row">
-
-        <div class="col-sm-3 col-xs-6">
-          <label for="mombody">Moms Body Color</label>
-          <select id="mombody"
-                  class="form-control"
-                  name="mombody"
-                  ngModel
-                  required >
-            <option value="0000" selected>Green</option>
-            <option value="0001">Yellow</option>
-            <option value="0101">Blue</option>
-          </select>
-        </div>
-
-        <div class="col-sm-3 col-xs-6">
-          <label for="dadbody">Dads Body Color</label>
-          <select id="dadbody"
-                  class="form-control"
-                  name="dadbody"
-                  ngModel
-                  required >
-            <option value="0000" selected>Green</option>
-            <option value="0001">Yellow</option>
-            <option value="0101">Blue</option>
           </select>
         </div> -->
 
@@ -80,7 +37,7 @@
           <button class="btn btn-success"
                   type="submit"
                   class="btn btn-success"
-                  [disabled]="!f.valid" >Do Sex</button>
+                  [disabled]="!f.valid" >Make Babe</button>
         </div>
 
       </div>
@@ -104,8 +61,8 @@
               </div>
             </div>
             <div class="arms">
-                <div class="armleft"></div>
-            </div>
+              <div class="armleft"></div>
+            </div><span *ngIf="babe.isMutant">💩</span>
           </div>
 
         </div>
@@ -114,13 +71,13 @@
 
     <div class="row" *ngIf="babe">
       <div class="col-sm-6 col-xs-12">
-          <h3 class="text-center">This babe's info.</h3>
-          <p class="text-center">
-            <strong>DNA</strong>: {{ babe.dna }}<br>
-            <strong>Gene List</strong>: {{ babe.geneList }}<br>
-            <strong>Eye Color</strong>: {{ babe.eyeColor }}<br>
-            <strong>Body Color</strong>: {{ babe.bodyColor }}<br>
-          </p>
+        <h3 class="text-center">This babe's info.</h3>
+        <p class="text-center">
+          <strong>DNA</strong>: {{ babe.dna }}<br>
+          <strong>Gene List</strong>: {{ babe.geneList }}<br>
+          <strong>Eye Color</strong>: {{ babe.eyeColor }}<br>
+          <strong>Body Color</strong>: {{ babe.bodyColor }}<br>
+        </p>
       </div>
     </div>
 

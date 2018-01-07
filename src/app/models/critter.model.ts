@@ -7,9 +7,10 @@ export class Critter {
   dnaService: DnaService;
 
   constructor(public dna: string,
+              public geneList?: string[],
               public eyeColor?: string,
               public bodyColor?: string,
-              public geneList?: string[]) {
+              public isMutant?: boolean) {
 
     // so that we dont have to provide the service in the constructor when creating critters
     this.dnaService = ReflectiveInjector.resolveAndCreate([DnaService]).get(DnaService);
@@ -19,11 +20,14 @@ export class Critter {
     console.log(this);
   }
 
-  createGenes() {
+  private createGenes() {
     this.geneList = this.dnaService.createGeneList(this.dna);
     this.eyeColor = this.dnaService.getEyeColor( this.geneList[0] );
     this.bodyColor = this.dnaService.getBodyColor( this.geneList[1] );
+    this.isMutant = this.checkForMutation();
+  }
 
-    console.log(this.geneList);
+  private checkForMutation() {
+    return Math.floor(Math.random() * 2) === 1;
   }
 }

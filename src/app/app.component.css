@@ -61,22 +61,21 @@
 .eye .eyeleft {
   margin-left: 50px;
   border-radius: 50%;
-  width: 10px;
-  height: 10px;
+  width: inherit;
+  height: inherit;
   background-color: inherit;
 }
 
 .mouth {
   margin-left: 39px;
   margin-top: 60px;
-  position: absolute;
   width:20px;
   height:20px;
   border-top:.5rem solid black;
   border-left:.5rem solid black;
   border-top-left-radius:100%;
-  float:left;
   -webkit-transform: rotate(222deg);
+  position: absolute;
 }
 
 .feet {
