@@ -11,12 +11,14 @@ import { DnaService } from './services/dna.service';
 import { AppRoutingModule } from './app.routes';
 import { StorkService } from './services/stork.service';
 import { HeaderComponent } from './header/header.component';
+import { CritterComponent } from './critter/critter.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    CritterComponent
   ],
   imports: [
     BrowserModule,

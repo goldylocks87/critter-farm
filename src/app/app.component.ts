@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { DnaService } from './services/dna.service';
+// import { DnaService } from './services/dna.service';
 import { Critter } from './models/critter.model';
 import { StorkService } from './services/stork.service';
 
@@ -13,10 +13,11 @@ import { StorkService } from './services/stork.service';
 export class AppComponent implements OnInit {
 
   title = 'critter farm';
+  dad: Critter;
+  mom: Critter;
   babe: Critter;
 
-  constructor(private dnaService: DnaService,
-              private stork: StorkService ) {}
+  constructor( private stork: StorkService ) {}
 
   ngOnInit() {
     // default babe
@@ -25,7 +26,11 @@ export class AppComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     const value = form.value;
-    this.babe = this.stork.makeBabe( value.daddna, value.momdna );
+
+    this.dad = new Critter(value.daddna, 'male');
+    this.mom = new Critter(value.momdna, 'female');
+
+    this.babe = this.stork.makeBabe( this.dad, this.mom );
   }
 
 }

@@ -13,10 +13,10 @@ export class StorkService {
 
   constructor(private dnaService: DnaService) {}
 
-  makeBabe( dad: string, mom: string ) {
+  makeBabe( dad: Critter, mom: Critter ) {
 
-    this.dad = new Critter(dad, 'male');
-    this.mom = new Critter(mom, 'female');
+    this.dad = dad;
+    this.mom = mom;
 
     console.log( 'papa :', this.dad);
     console.log( 'mama :', this.mom);
@@ -36,10 +36,11 @@ export class StorkService {
 
       if( this.fromFather() ) {
         babedna += dadAllelArray[i];
+        babedna += momAllelArray[i++];
       } else {
         babedna += momAllelArray[i];
+        babedna += dadAllelArray[i++];
       }
-
     }
 
     return babedna;
