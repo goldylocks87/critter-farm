@@ -3,10 +3,8 @@
   <div class="col-xs-12">
 
     <form (ngSubmit)="onSubmit(f)" #f="ngForm" style="margin: 1rem;">
-      <div class="row">
-
+      <!-- <div class="row">
         <div class="col-xs-12">
-
           <label for="dna">Type in some DNA! (1s and 0s)</label>
             <input id="dna"
                     class="form-control"
@@ -16,9 +14,13 @@
                     minlength="8"
                     ngModel
                     required >
-          <!-- </div>
 
-          <label for="daddna">Type in some DNA for the Father!</label>
+        </div>
+      </div> -->
+
+      <div class="row">
+        <div class="col-xs-6">
+          <label for="daddna">DNA for the Father!</label>
           <input id="daddna"
                   class="form-control"
                   name="daddna"
@@ -30,7 +32,7 @@
         </div>
 
         <div class="col-xs-6">
-          <label for="momdna">Type in some DNA for the Mother!</label>
+          <label for="momdna">DNA for the Mother!</label>
           <input id="momdna"
                   class="form-control"
                   name="momdna"
@@ -38,9 +40,8 @@
                   maxlength="8"
                   minlength="8"
                   ngModel
-                  required > -->
+                  required >
         </div>
-
       </div>
 
       <div class="row" style="margin-top: 1rem;">
@@ -56,7 +57,7 @@
     </form>
 
     <div class="row">
-      <div class="col-xs-12" style="text-align: center">
+      <div class="col-xs-12 text-center" >
         <!-- MOVE THIS TO ITS OWN COMPONENT -->
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             class="" app-context="doc-2d" x="0px" y="0px" width="115" height="200" jvs-fullPath="gdrive/CHUB.svg">
@@ -69,7 +70,7 @@
               <path d="M 46.55437469482422 123.36096954345703 C 46.55437469482422 132.39181518554688 52.911903381347656 133.72549438476562 55.04621887207031 133.642578125 C 61.765663146972656 133.38156127929688 63.03853225708008 127.25801849365234 63.356422424316406 123.4438705444336" fill="none" fill-rule="nonzero" stroke="rgb(92,90,90)" stroke-width="3.1384125152238047" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal" opacity="1" transform="matrix(1 0 0 1 -17.7422 38.7506)" stroke-opacity="1" />
               <path d="M 46.554378509521484 123.36096954345703 C 46.554378509521484 132.39181518554688 52.91191482543945 133.72549438476562 55.04622268676758 133.642578125 C 61.76567459106445 133.38156127929688 63.03853988647461 127.25801849365234 63.35642623901367 123.4438705444336" fill="none" fill-rule="nonzero" stroke="rgb(92,90,90)" stroke-width="3.138412487655835" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal" opacity="1" transform="matrix(1 0 0 1 33.4472 38.7506)" stroke-opacity="1" />
               <ellipse cx="21.3848" cy="27.5064" rx="3.00513" ry="3.00513" fill="rgb(255,253,253)" stroke="none" stroke-width="0.09479499637900111" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" transform="matrix(1 0 0 1 20.9083 85.1619)" fill-opacity="1" />
-              <ellipse id="left-eye" [attr.fill]="this.babe.eyeColor" cx="76.1096" cy="97.8969" rx="10.6954" ry="10.6954" stroke="none" stroke-width="0.3373804210801186" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" transform="matrix(1 0 0 1 -37.6848 16.7873)" fill-opacity="1" />
+              <ellipse id="left-eye" class="eye" [attr.fill]="this.babe.eyeColor" cx="76.1096" cy="97.8969" rx="10.6954" ry="10.6954" stroke="none" stroke-width="0.3373804210801186" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" transform="matrix(1 0 0 1 -37.6848 16.7873)" fill-opacity="1" />
               <ellipse cx="25.1254" cy="32.3177" rx="3.53077" ry="3.53077" fill="rgb(255,253,253)" stroke="none" stroke-width="0.11137619461378456" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" transform="matrix(1 0 0 1 16.7069 78.0701)" fill-opacity="1" />
               <path d="M 46.55438995361328 123.36097717285156 C 46.55438232421875 132.39183044433594 52.91190719604492 133.72549438476562 55.04622268676758 133.64256286621094 C 61.76566696166992 133.38156127929688 63.038551330566406 127.25802612304688 63.35643005371094 123.44387817382812" [attr.fill]="this.babe.bodyColor" fill-rule="nonzero" stroke="rgb(92,90,90)" stroke-width="3.138412474363251" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal" opacity="1" transform="matrix(0.998975 0.0452655 -0.0452655 0.998975 -10.7779 57.2425)" fill-opacity="1" stroke-opacity="1" />
               <path d="M 46.55436706542969 123.36093139648438 C 46.55436706542969 132.39178466796875 52.91189956665039 133.72543334960938 55.046199798583984 133.6425323486328 C 61.765655517578125 133.3815155029297 63.03852081298828 127.25798034667969 63.356388092041016 123.44384765625" [attr.fill]="this.babe.bodyColor" fill-rule="nonzero" stroke="rgb(92,90,90)" stroke-width="3.1384114021531473" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal" opacity="1" transform="matrix(0.998588 -0.0531154 0.0531154 0.998588 26.4253 63.281)" fill-opacity="1" stroke-opacity="1" />
@@ -85,7 +86,7 @@
               <ellipse cx="10.0004" cy="12.8632" rx="1.40532" ry="1.40532" fill="rgb(255,253,253)" stroke="none" stroke-width="0.04433009957656965" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" transform="matrix(1 0 0 1 27.4318 99.5424)" fill-opacity="1" />
               <ellipse cx="100.598" cy="129.396" rx="14.1367" ry="14.1367" fill="rgb(255,253,253)" stroke="none" stroke-width="1.4384946425834804" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" transform="matrix(1 0 0 1 -14.1517 -16.118)" fill-opacity="1" />
               <ellipse cx="21.3848" cy="27.5064" rx="3.00513" ry="3.00513" fill="rgb(255,253,253)" stroke="none" stroke-width="0.094794996379001" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" transform="matrix(1 0 0 1 68.7332 86.4832)" fill-opacity="1" />
-              <ellipse id="right-eye" [attr.fill]="this.babe.eyeColor" cx="76.1096" cy="97.8969" rx="10.6954" ry="10.6954" stroke="none" stroke-width="0.3373804210801182" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" transform="matrix(1 0 0 1 10.5776 17.2333)" fill-opacity="1" />
+              <ellipse id="right-eye" class="eye" [attr.fill]="this.babe.eyeColor" cx="76.1096" cy="97.8969" rx="10.6954" ry="10.6954" stroke="none" stroke-width="0.3373804210801182" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" transform="matrix(1 0 0 1 10.5776 17.2333)" fill-opacity="1" />
               <ellipse cx="25.1254" cy="32.3177" rx="3.53077" ry="3.53077" fill="rgb(255,253,253)" stroke="none" stroke-width="0.11137619461378442" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" transform="matrix(1 0 0 1 64.9691 78.516)" fill-opacity="1" />
               <ellipse cx="10.0004" cy="12.8632" rx="1.40532" ry="1.40532" fill="rgb(255,253,253)" stroke="none" stroke-width="0.044330099576569595" stroke-linecap="butt" stroke-linejoin="miter" opacity="1" transform="matrix(1 0 0 1 75.6943 99.9882)" fill-opacity="1" />
             </g>
@@ -95,35 +96,9 @@
       </div>
     </div>
 
-    <!-- <div class="row">
-      <div class="col-sm-6 col-xs-12">
-        <div id="container">
-
-          <div class="creature">
-            <div class="leaf"></div>
-            <div class="babeleaf"></div>
-            <div class="leafline"></div>
-            <div class="eye" [style.background-color]="this.babe.eyeColor">
-              <div class="eyeleft"></div>
-            </div>
-            <div class="lichaam" [style.background-color]="this.babe.bodyColor">
-              <div class="mouth"></div>
-              <div class="feet">
-                <div class="feetleft"></div>
-              </div>
-            </div>
-            <div class="arms">
-              <div class="armleft"></div>
-            </div><span *ngIf="babe.isMutant">💩</span>
-          </div>
-
-        </div>
-      </div>
-    </div> -->
-
     <div class="row" *ngIf="babe">
       <div class="col-xs-12">
-        <h3 class="text-center">This babe's info.</h3>
+        <h3 class="text-center">This little chub's info.</h3>
         <p class="text-center">
           <strong>DNA</strong>: {{ babe.dna }}<br>
           <strong>Gene List</strong>: {{ babe.geneList }}<br>

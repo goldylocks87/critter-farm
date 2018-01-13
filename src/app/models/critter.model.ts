@@ -18,7 +18,6 @@ export class Critter {
 
     if( !this.geneList && this.dna.length >= 8 ) { this.createGenes(); }
 
-    console.log(this);
   }
 
   private createGenes() {
@@ -26,7 +25,7 @@ export class Critter {
     this.eyeColor = this.dnaService.getEyeColor( this.geneList[0] );
     this.bodyColor = this.dnaService.getBodyColor( this.geneList[1] );
     this.isMutant = this.checkForMutation();
-    this.sex = this.dnaService.determineSex();
+    if( !this.sex ) { this.sex = this.dnaService.determineSex(); }
   }
 
   private checkForMutation() {

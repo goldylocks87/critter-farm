@@ -14,21 +14,18 @@ export class AppComponent implements OnInit {
 
   title = 'critter farm';
   babe: Critter;
-  eyes;
-  body = '#9ec65e';
 
   constructor(private dnaService: DnaService,
               private stork: StorkService ) {}
 
   ngOnInit() {
+    // default babe
     this.babe = new Critter( '11111111' );
   }
 
   onSubmit(form: NgForm) {
     const value = form.value;
-    this.babe = new Critter( value.dna );
-
-    //this.stork.makeBabe( value.daddna, value.momdna );
+    this.babe = this.stork.makeBabe( value.daddna, value.momdna );
   }
 
 }

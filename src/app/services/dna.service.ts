@@ -54,6 +54,10 @@ export class DnaService {
     return genes;
   }
 
+  public getAllels( dna: string ) {
+    return this.chunk( dna, 2 );
+  }
+
   // private utilities
 
   private createDnaList( dna: string ) {
