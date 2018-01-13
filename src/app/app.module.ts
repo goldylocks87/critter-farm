@@ -2,20 +2,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+// for svgs
+import { HttpClientModule } from '@angular/common/http';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+
 import { AppComponent } from './app.component';
 import { DnaService } from './services/dna.service';
 import { AppRoutingModule } from './app.routes';
 import { StorkService } from './services/stork.service';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    AngularSvgIconModule
   ],
   providers: [DnaService, StorkService],
   bootstrap: [AppComponent]

@@ -7,10 +7,10 @@ export class Critter {
   dnaService: DnaService;
 
   constructor(public dna: string,
+              public sex?: string,
               public geneList?: string[],
               public eyeColor?: string,
               public bodyColor?: string,
-              public sex?: string,
               public isMutant?: boolean) {
 
     // so that we dont have to provide the service in the constructor when creating critters
