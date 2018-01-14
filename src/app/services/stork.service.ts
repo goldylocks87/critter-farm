@@ -26,6 +26,15 @@ export class StorkService {
     return this.babe;
   }
 
+  setParents( dad: Critter, mom: Critter ) {
+    this.dad = dad;
+    this.mom = mom;
+  }
+
+  getParents() {
+    return [this.dad, this.mom];
+  }
+
   mix() {
 
     const dadAllelArray = this.dnaService.getAllels(this.dad.dna);

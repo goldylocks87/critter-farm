@@ -1,39 +1,36 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 2rem;">
+    <a class="navbar-brand" routerLink="/">Critter Farm</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="navbar-header">
-            <a routerLink="/" class="navbar-brand">Critter Farm</a>
-        </div>
-
-        <div class="navbar-default">
-<!--
-            <ul class="nav navbar-nav">
-                <li routerLinkActive="active">
-                  <a routerLink="/home">Critters</a>
-                </li>
-            </ul> -->
-
-            <ul class="nav navbar-nav navbar-right">
-              <!-- <ng-template [ngIf]="!authService.isAuthenticated()">
-                <li><a routerLink="/signup">Sign Up</a></li>
-                <li><a routerLink="/signin">Login</a></li>
-              </ng-template>
-
-              <ng-template [ngIf]="authService.isAuthenticated()">
-                <li><a routerLink="/signin" (click)="onLogout()">Logout</a></li>
-                <li class="dropdown" appDropdown>
-                    <a class="dropdown-toggle" role="button"
-                        style="cursor: pointer;">Manage<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a (click)="onSaveData()" style="cursor: pointer;">Save Data</a></li>
-                        <li><a (click)="onFetchData()" style="cursor: pointer;">Fetch Data</a></li>
-                    </ul>
-                </li>
-              </ng-template> -->
-
-            </ul>
-
-        </div>
-
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/critters">Critters</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/breed">Breeding Ground</a>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" routerLink="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/">Action</a>
+            <a class="dropdown-item" routerLink="/">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" routerLink="/">Disabled</a>
+        </li> -->
+      </ul>
+      <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> -->
     </div>
-</nav>
+  </nav>
+

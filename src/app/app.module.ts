@@ -12,13 +12,19 @@ import { AppRoutingModule } from './app.routes';
 import { StorkService } from './services/stork.service';
 import { HeaderComponent } from './header/header.component';
 import { CritterComponent } from './critter/critter.component';
+import { CritterListComponent } from './critter-list/critter-list.component';
+import { SelectDirective } from './directives/select.directive';
+import { BreedComponent } from './breed/breed.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CritterComponent
+    CritterComponent,
+    CritterListComponent,
+    SelectDirective,
+    BreedComponent
   ],
   imports: [
     BrowserModule,

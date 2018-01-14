@@ -1,0 +1,14 @@
+<h4>Select {{ parentIds.length < 1 ? 'two babes to breed together.' : 'one more babe!' }}</h4>
+<hr>
+<div id="wrapper" *ngFor="let critter of critters; let i = index" >
+  <div class="card text-center" appSelect (click)="selectForSex(i)">
+    <div class="card-body">
+      <h5 class="card-title">Babe #{{ i + 1 }}</h5>
+      <app-critter [critter]="critter"></app-critter>
+      <p class="card-text">
+        DNA : {{ critter.dna }}
+      </p>
+    </div>
+  </div>
+</div>
+
