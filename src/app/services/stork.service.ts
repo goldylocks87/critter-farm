@@ -41,14 +41,14 @@ export class StorkService {
     const momAllelArray = this.dnaService.getAllels(this.mom.dna);
 
     let babedna = '';
-    for( let i = 0; i < dadAllelArray.length; i++ ) {
+    for( let i = 0; i < dadAllelArray.length; i = i + 2 ) {
 
       if( this.fromFather() ) {
         babedna += dadAllelArray[i];
-        babedna += momAllelArray[i++];
+        babedna += momAllelArray[i + 1];
       } else {
         babedna += momAllelArray[i];
-        babedna += dadAllelArray[i++];
+        babedna += dadAllelArray[i + 1];
       }
     }
 

@@ -7,7 +7,7 @@ import { BreedComponent } from './breed/breed.component';
 
 const appRoutes: Routes =[
   { path: '', component: CritterListComponent, pathMatch: 'full' },
-  { path: 'critters', component: CritterListComponent }
+  { path: 'critters', component: CritterListComponent },
   { path: 'breed', component: BreedComponent }
 ];
 

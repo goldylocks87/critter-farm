@@ -37,7 +37,7 @@ export class CritterListComponent implements OnInit {
     this.critters.push( new Critter('10010011') );
   }
 
-  selectForSex( index: number ) {\
+  selectForSex( index: number ) {
 
     const inArray = this.parentIds.indexOf(index);
 
