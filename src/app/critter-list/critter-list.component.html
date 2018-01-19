@@ -1,14 +1,19 @@
-<h4>Select {{ parentIds.length < 1 ? 'two babes to breed together.' : 'one more babe!' }}</h4>
-<hr>
+<!-- <h4 class="mat-h2">Select {{ parentIds.length < 1 ? 'two babes to breed together.' : 'one more babe!' }}</h4>
+<hr mat-ink-bar> -->
 <div id="wrapper" *ngFor="let critter of critters; let i = index" >
-  <div class="card text-center" appSelect (click)="selectForSex(i)">
-    <div class="card-body">
-      <h5 class="card-title">Babe #{{ i + 1 }}</h5>
-      <app-critter [critter]="critter"></app-critter>
-      <p class="card-text">
-        DNA : {{ critter.dna }}
-      </p>
-    </div>
-  </div>
+  <mat-card >
+      <mat-card-header>
+        <mat-card-title>Babe #{{ i + 1 }}</mat-card-title>
+        <mat-card-subtitle>DNA : {{ critter.dna }}</mat-card-subtitle>
+      </mat-card-header>
+      <div mat-card-image class="text-center" style="background-color: whitesmoke">
+        <app-critter [critter]="critter"></app-critter>
+      </div>
+      <mat-slide-toggle (click)="selectForSex(i)">Select for Breeding</mat-slide-toggle>
+    </mat-card>
 </div>
+<mat-tab-group>
+  <mat-tab label="Tab 1">Content 1</mat-tab>
+  <mat-tab label="Tab 2">Content 2</mat-tab>
+</mat-tab-group>
 

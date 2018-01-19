@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // for svgs
 import { HttpClientModule } from '@angular/common/http';
@@ -15,6 +16,7 @@ import { CritterComponent } from './critter/critter.component';
 import { CritterListComponent } from './critter-list/critter-list.component';
 import { SelectDirective } from './directives/select.directive';
 import { BreedComponent } from './breed/breed.component';
+import { MaterialModule } from './material-module/material.module';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { BreedComponent } from './breed/breed.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularSvgIconModule
+    AngularSvgIconModule,
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [DnaService, StorkService],
   bootstrap: [AppComponent]

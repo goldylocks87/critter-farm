@@ -2,24 +2,25 @@
   display: inline;
 }
 
-.card {
-  margin: 1rem;
-  background-color: #f8f9fa;
-  max-width: 9rem;
+.mat-card {
+  margin: .5rem;
+  max-width: 10rem;
   display: inline-block;
 }
 
-.card:hover {
+.text-center {
+  text-align: center;
+}
+
+.mat-card:hover {
   cursor: pointer;
 }
 
+/*
 .card:active {
   background-color: grey;
 }
-
-.text-center {
-  font-size: 12px;
-}
+*/
 
 .isSelected {
   box-shadow: 0 0.2rem 0 0 #28a745;
