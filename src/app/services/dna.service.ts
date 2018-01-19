@@ -25,6 +25,15 @@ export class DnaService {
     else if( gene.indexOf('B') !== -1 ) {
       return 'LightGreen';
     }
+    else if( gene.indexOf('a') !== -1 && gene.indexOf('b') !== -1 ) {
+      return '#57a0eb'; // blue
+    }
+    else if( gene.indexOf('a') ) {
+      return '#57a0eb'; // blue
+    }
+    else if( gene.indexOf('b') ) {
+      return 'black'; // black
+    }
     else {
       return '#57a0eb'; // blue
     }
@@ -39,6 +48,15 @@ export class DnaService {
     }
     else if( gene.indexOf('B') !== -1 ) {
       return '#9ec65e'; // green
+    }
+    else if( gene.indexOf('a') !== -1 && gene.indexOf('b') !== -1 ) {
+      return '#c5c65e'; // yellow
+    }
+    else if( gene.indexOf('a') ) {
+      return '#c5c65e'; // yellow
+    }
+    else if( gene.indexOf('b') ) {
+      return 'black'; // black
     }
     else {
       return '#c5c65e'; // yellow
