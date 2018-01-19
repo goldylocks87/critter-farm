@@ -32,7 +32,8 @@ export class StorkService {
   }
 
   getParents() {
-    return [this.dad, this.mom];
+    if( this.dad && this.mom ) { return [this.dad, this.mom]; }
+    else { return null; }
   }
 
   mix() {

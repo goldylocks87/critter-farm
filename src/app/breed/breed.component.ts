@@ -26,14 +26,17 @@ export class BreedComponent implements OnInit {
     // default babe
     this.babe = new Critter( '11111111' );
 
-    // const parents = this.stork.getParents();
+    const parents = this.stork.getParents();
 
-    // this.dad = new Critter(parents[0].dna, 'male');
-    // this.mom = new Critter(parents[1].dna, 'female');
+    if( parents !== null ) {
 
-    // this.babe = this.stork.makeBabe(parents[0],parents[1]);
+      this.dad = new Critter(parents[0].dna, 'male');
+      this.mom = new Critter(parents[1].dna, 'female');
 
-    // this.form.setValue({ daddna: parents[0].dna, momdna: parents[1].dna });
+      this.babe = this.stork.makeBabe(parents[0],parents[1]);
+
+      this.form.setValue({ daddna: parents[0].dna, momdna: parents[1].dna });
+    }
   }
 
   onSubmit(form: NgForm) {
