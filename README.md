@@ -1,6 +1,6 @@
 # CritterFarm
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
+Current build visible @ https://goldylocks87.github.io/critter-farm/
 
 ## Development server
 
