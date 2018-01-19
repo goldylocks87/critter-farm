@@ -2,14 +2,14 @@
 <hr mat-ink-bar> -->
 <div id="wrapper" *ngFor="let critter of critters; let i = index" >
   <mat-card >
-      <mat-card-header>
-        <mat-card-title>Babe #{{ i + 1 }}</mat-card-title>
-        <mat-card-subtitle>DNA : {{ critter.dna }}</mat-card-subtitle>
-      </mat-card-header>
-      <div mat-card-image class="text-center" style="background-color: whitesmoke">
-        <app-critter [critter]="critter"></app-critter>
-      </div>
-      <mat-slide-toggle (click)="selectForSex(i)">Select for sex</mat-slide-toggle>
-    </mat-card>
+    <mat-card-header>
+      <mat-card-title>Babe #{{ i + 1 }}</mat-card-title>
+      <mat-card-subtitle>DNA : {{ critter.dna }}</mat-card-subtitle>
+    </mat-card-header>
+    <div mat-card-image class="text-center" style="background-color: whitesmoke">
+      <app-critter [critter]="critter"></app-critter>
+    </div>
+    <mat-slide-toggle (click)="selectForSex(i)">Select for sex</mat-slide-toggle>
+  </mat-card>
 </div>
 

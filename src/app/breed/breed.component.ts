@@ -35,7 +35,7 @@ export class BreedComponent implements OnInit {
 
       this.babe = this.stork.makeBabe(parents[0],parents[1]);
 
-      this.form.setValue({ daddna: parents[0].dna, momdna: parents[1].dna });
+      // this.form.setValue({ daddna: parents[0].dna, momdna: parents[1].dna });
     }
   }
 

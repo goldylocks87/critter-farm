@@ -33,40 +33,62 @@
   </div>
 </form> -->
 
-<div class="row">
-  <div class="col-12 text-center" *ngIf="babe">
+<div *ngIf="babe" style="text-align: center;">
 
-    <div class="row text-center">
-      <div class="col" style="height: 15rem;">
-        <app-critter [critter]="babe" style="height:100px;"></app-critter>
-      </div>
+  <mat-card style="max-width: 50%; text-align: center;">
+    <mat-card-header>
+      <mat-card-title>Your Babe</mat-card-title>
+    </mat-card-header>
+    <div mat-card-image class="text-center" style="background-color: whitesmoke">
+      <app-critter [critter]="babe"></app-critter>
     </div>
+    <mat-card-content>
+      <p class="text-center">
+        <strong>DNA</strong>: {{ babe.dna }}<br>
+        <strong>Gene List</strong>: {{ babe.geneList }}<br>
+        <strong>Eye Color</strong>: {{ babe.eyeColor }}<br>
+        <strong>Body Color</strong>: {{ babe.bodyColor }}<br>
+        <strong>Sex</strong>: {{ babe.sex }}<br>
+      </p>
+    </mat-card-content>
+  </mat-card>
 
-    <div class="row text-center">
-      <div class="col">
-        <h3 class="text-center">This little chub's info.</h3>
-        <p class="text-center">
-          <strong>DNA</strong>: {{ babe.dna }}<br>
-          <strong>Gene List</strong>: {{ babe.geneList }}<br>
-          <strong>Eye Color</strong>: {{ babe.eyeColor }}<br>
-          <strong>Body Color</strong>: {{ babe.bodyColor }}<br>
-          <strong>Sex</strong>: {{ babe.sex }}<br>
-        </p>
-      </div>
+  <mat-card *ngIf="dad" style="max-width: 50%; text-align: center;">
+    <mat-card-header>
+      <mat-card-title>The Father</mat-card-title>
+    </mat-card-header>
+    <div mat-card-image class="text-center" style="background-color: whitesmoke">
+      <app-critter [critter]="dad"></app-critter>
     </div>
+    <mat-card-content>
+      <p class="text-center">
+        <strong>DNA</strong>: {{ dad.dna }}<br>
+        <strong>Gene List</strong>: {{ dad.geneList }}<br>
+        <strong>Eye Color</strong>: {{ dad.eyeColor }}<br>
+        <strong>Body Color</strong>: {{ dad.bodyColor }}<br>
+        <strong>Sex</strong>: {{ dad.sex }}<br>
+      </p>
+    </mat-card-content>
+  </mat-card>
 
-    <div class="row text-center">
-      <div class="col" *ngIf="dad" style="height: 15rem;">
-        <app-critter [critter]="dad"></app-critter>
-        <h3 class="text-center">Dad</h3>
-      </div>
-      <div class="col" *ngIf="mom" style="height: 15rem;">
-        <app-critter [critter]="mom"></app-critter>
-        <h3 class="text-center">Mom</h3>
-      </div>
+  <mat-card *ngIf="mom" style="max-width: 50%; text-align: center;">
+    <mat-card-header>
+      <mat-card-title>The Mother</mat-card-title>
+    </mat-card-header>
+    <div mat-card-image class="text-center" style="background-color: whitesmoke">
+      <app-critter [critter]="mom"></app-critter>
     </div>
+    <mat-card-content>
+      <p class="text-center">
+        <strong>DNA</strong>: {{ mom.dna }}<br>
+        <strong>Gene List</strong>: {{ mom.geneList }}<br>
+        <strong>Eye Color</strong>: {{ mom.eyeColor }}<br>
+        <strong>Body Color</strong>: {{ mom.bodyColor }}<br>
+        <strong>Sex</strong>: {{ mom.sex }}<br>
+      </p>
+    </mat-card-content>
+  </mat-card>
 
-  </div>
 </div>
 
 
