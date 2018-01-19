@@ -44,19 +44,14 @@ export class StorkService {
     let babedna = '';
     for( let i = 0; i < dadAllelArray.length; i = i + 2 ) {
 
-      if( this.fromFather() ) {
-        babedna += dadAllelArray[i];
-        babedna += momAllelArray[i + 1];
-      } else {
-        babedna += momAllelArray[i];
-        babedna += dadAllelArray[i + 1];
-      }
+      babedna += dadAllelArray[ this.random() ? i : i + 1 ];
+      babedna += momAllelArray[ this.random() ? i : i + 1 ];
     }
 
     return babedna;
   }
 
-  private fromFather() {
+  private random() {
     return Math.floor(Math.random() * 2) === 1;
   }
 }

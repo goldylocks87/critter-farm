@@ -24,6 +24,8 @@ export class CritterListComponent implements OnInit {
     this.critters = [];
     this.parentIds = [];
 
+    this.critters.push( new Critter('00011001') );
+    this.critters.push( new Critter('00010001') );
     this.critters.push( new Critter('00101011') );
     this.critters.push( new Critter('11001100') );
     this.critters.push( new Critter('00001111') );
