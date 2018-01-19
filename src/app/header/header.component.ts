@@ -7,7 +7,7 @@ import { Router } from '@angular/router/';
     templateUrl: './header.component.html',
     styles: ['nav { margin-bottom: 1rem; }']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   routeLinks: any[];
   activeLinkIndex = -1;
@@ -26,9 +26,9 @@ export class HeaderComponent implements OnInit {
     ];
   }
 
-  ngOnInit(): void {
-    this.router.events.subscribe((res) => {
-      this.activeLinkIndex = this.routeLinks.indexOf(this.routeLinks.find(tab => tab.link === '.' + this.router.url));
-    });
-  }
+  // ngOnInit(): void {
+  //   this.router.events.subscribe((res) => {
+  //     this.activeLinkIndex = this.routeLinks.indexOf(this.routeLinks.find(tab => tab.link === '.' + this.router.url));
+  //   });
+  // }
 }
