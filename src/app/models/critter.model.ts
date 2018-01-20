@@ -1,7 +1,7 @@
 import { ReflectiveInjector } from '@angular/core';
 
 import { DnaService } from '../services/dna.service';
-const names = require('people-names');
+import * as names from 'people-names';
 
 export class Critter {
 
