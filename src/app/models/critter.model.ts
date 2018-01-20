@@ -1,6 +1,7 @@
 import { ReflectiveInjector } from '@angular/core';
 
 import { DnaService } from '../services/dna.service';
+const names = require('people-names');
 
 export class Critter {
 
@@ -11,7 +12,8 @@ export class Critter {
               public geneList?: string[],
               public eyeColor?: string,
               public bodyColor?: string,
-              public isMutant?: boolean) {
+              public isMutant?: boolean,
+              public name?: string) {
 
     // so that we dont have to provide the service in the constructor when creating critters
     this.dnaService = ReflectiveInjector.resolveAndCreate([DnaService]).get(DnaService);
@@ -26,6 +28,7 @@ export class Critter {
     this.bodyColor = this.dnaService.getBodyColor( this.geneList[1] );
     this.isMutant = this.checkForMutation();
     if( !this.sex ) { this.sex = this.dnaService.determineSex(); }
+    this.name = this.sex === 'male' ? names.maleRandomEn() : names.femaleRandomEn();
   }
 
   private checkForMutation() {
