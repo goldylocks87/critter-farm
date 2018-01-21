@@ -30,10 +30,10 @@ export class Critter {
     this.isMutant = this.checkForMutation();
     if( !this.sex ) { this.sex = this.dnaService.determineSex(); }
     if( !this.name && this.sex ) { this.name = this.sex === 'male' ? names.maleRandomEn() : names.femaleRandomEn(); }
-    if( this.sex === 'male' && this.isMutant ) { this.isStriped = 1; } else { this.isStriped = 0; }
+    if( this.isMutant ) { this.isStriped = 1; } else { this.isStriped = 0; }
   }
 
   private checkForMutation() {
-    return Math.floor(Math.random() * 2) === 1;
+    return Math.floor(Math.random() * 5) === 1;
   }
 }
