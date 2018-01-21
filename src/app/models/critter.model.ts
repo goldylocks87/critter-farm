@@ -13,7 +13,8 @@ export class Critter {
               public eyeColor?: string,
               public bodyColor?: string,
               public isMutant?: boolean,
-              public name?: string) {
+              public name?: string,
+              public isStriped?: number) {
 
     // so that we dont have to provide the service in the constructor when creating critters
     this.dnaService = ReflectiveInjector.resolveAndCreate([DnaService]).get(DnaService);
@@ -28,7 +29,8 @@ export class Critter {
     this.bodyColor = this.dnaService.getBodyColor( this.geneList[1] );
     this.isMutant = this.checkForMutation();
     if( !this.sex ) { this.sex = this.dnaService.determineSex(); }
-    this.name = this.sex === 'male' ? names.maleRandomEn() : names.femaleRandomEn();
+    if( !this.name && this.sex ) { this.name = this.sex === 'male' ? names.maleRandomEn() : names.femaleRandomEn(); }
+    if( this.sex === 'male' && this.isMutant ) { this.isStriped = 1; } else { this.isStriped = 0; }
   }
 
   private checkForMutation() {
