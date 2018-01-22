@@ -14,6 +14,7 @@ export class Critter {
               public bodyColor?: string,
               public isMutant?: boolean,
               public name?: string,
+              public bday?: Date,
               public isStriped?: number) {
 
     // so that we dont have to provide the service in the constructor when creating critters
@@ -30,7 +31,8 @@ export class Critter {
     this.isMutant = this.checkForMutation();
     if( !this.sex ) { this.sex = this.dnaService.determineSex(); }
     if( !this.name && this.sex ) { this.name = this.sex === 'male' ? names.maleRandomEn() : names.femaleRandomEn(); }
-    if( this.isMutant ) { this.isStriped = 1; } else { this.isStriped = 0; }
+    if( this.isMutant === true ) { this.isStriped = 1; } else { this.isStriped = 0; }
+    if( !this.bday ) { this.bday = new Date(); }
   }
 
   private checkForMutation() {

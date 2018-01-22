@@ -25,3 +25,7 @@
 .isSelected {
   box-shadow: 0 0.2rem 0 0 #28a745;
 }
+
+.mat-slide-toggle {
+  margin-bottom: .5rem;
+}

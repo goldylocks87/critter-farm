@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Critter } from '../models/critter.model';
+import { Critter } from '../../models/critter.model';
 
 @Component({
   selector: 'app-critter',

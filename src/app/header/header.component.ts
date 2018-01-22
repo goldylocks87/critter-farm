@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Response } from '@angular/http/';
 import { Router } from '@angular/router/';
 
 @Component({
@@ -9,26 +8,6 @@ import { Router } from '@angular/router/';
 })
 export class HeaderComponent {
 
-  routeLinks: any[];
-  activeLinkIndex = -1;
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) {
-    this.routeLinks = [
-      {
-        label: 'Critters',
-        link: './critters',
-        index: 0
-      }, {
-        label: 'Breeding Grounds',
-        link: './breed',
-        index: 1
-      }
-    ];
-  }
-
-  // ngOnInit(): void {
-  //   this.router.events.subscribe((res) => {
-  //     this.activeLinkIndex = this.routeLinks.indexOf(this.routeLinks.find(tab => tab.link === '.' + this.router.url));
-  //   });
-  // }
 }
