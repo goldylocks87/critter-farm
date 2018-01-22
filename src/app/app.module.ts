@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule } from '@angular/http';
 
 // for svgs
 import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { AppComponent } from './app.component';
+import { DataStorageService } from './services/data-storage.service';
 import { DnaService } from './services/dna.service';
 import { AppRoutingModule } from './app.routes';
 import { StorkService } from './services/stork.service';
@@ -35,12 +37,13 @@ import { CritterService } from './services/critter.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpModule,
     HttpClientModule,
     AngularSvgIconModule,
     MaterialModule,
     BrowserAnimationsModule
   ],
-  providers: [DnaService, StorkService, CritterService],
+  providers: [DataStorageService, DnaService, StorkService, CritterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

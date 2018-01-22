@@ -15,7 +15,7 @@ export class Critter {
               public isMutant?: boolean,
               public name?: string,
               public bday?: Date,
-              public isStriped?: number) {
+              public stripe?: object) {
 
     // so that we dont have to provide the service in the constructor when creating critters
     this.dnaService = ReflectiveInjector.resolveAndCreate([DnaService]).get(DnaService);
@@ -25,13 +25,22 @@ export class Critter {
   }
 
   private createGenes() {
+
     this.geneList = this.dnaService.createGeneList(this.dna);
     this.eyeColor = this.dnaService.getEyeColor( this.geneList[0] );
     this.bodyColor = this.dnaService.getBodyColor( this.geneList[1] );
     this.isMutant = this.checkForMutation();
+
     if( !this.sex ) { this.sex = this.dnaService.determineSex(); }
+
     if( !this.name && this.sex ) { this.name = this.sex === 'male' ? names.maleRandomEn() : names.femaleRandomEn(); }
-    if( this.isMutant === true ) { this.isStriped = 1; } else { this.isStriped = 0; }
+
+    if( this.isMutant === true ) {
+      this.stripe = { opacity: 1, fill: '#5E5C5C' };
+    } else {
+      this.stripe = { opacity: 0, fill: '#5E5C5C' };
+    }
+
     if( !this.bday ) { this.bday = new Date(); }
   }
 

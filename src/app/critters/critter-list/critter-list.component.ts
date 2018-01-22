@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
+import { Subscription } from 'rxjs/Subscription';
 
 import { Critter } from '../../models/critter.model';
 import { StorkService } from '../../services/stork.service';
@@ -11,7 +12,9 @@ import { CritterService } from '../../services/critter.service';
   templateUrl: './critter-list.component.html',
   styleUrls: ['./critter-list.component.css']
 })
-export class CritterListComponent implements OnInit {
+export class CritterListComponent implements OnInit, OnDestroy {
+
+  crittersChanged: Subscription;
 
   critters: Critter[];
   parentIds: number[];
@@ -23,22 +26,11 @@ export class CritterListComponent implements OnInit {
               private critterService: CritterService) { }
 
   ngOnInit() {
+    this.crittersChanged = this.critterService.crittersChanged.subscribe(
+      (critters: Critter[]) => { this.critters = critters; console.log('~~~ critters from sub', critters); }
+    );
     this.critters = this.critterService.getCritters();
     this.parentIds = [];
-
-    // this.critters.push( new Critter('00011001') );
-    // this.critters.push( new Critter('00010001') );
-    // this.critters.push( new Critter('00101011') );
-    // this.critters.push( new Critter('11001100') );
-    // this.critters.push( new Critter('00001111') );
-    // this.critters.push( new Critter('10101010') );
-    // this.critters.push( new Critter('10001000') );
-    // this.critters.push( new Critter('10000000') );
-    // this.critters.push( new Critter('00001010') );
-    // this.critters.push( new Critter('10101000') );
-    // this.critters.push( new Critter('00101111') );
-    // this.critters.push( new Critter('11111111') );
-    // this.critters.push( new Critter('10010011') );
   }
 
   selectForSex( index: number ) {
@@ -61,5 +53,9 @@ export class CritterListComponent implements OnInit {
 
   checkOut( index: number ) {
     this.router.navigate(['/detail'], { queryParams: { id: index } });
+  }
+
+  ngOnDestroy() {
+    this.crittersChanged.unsubscribe();
   }
 }
