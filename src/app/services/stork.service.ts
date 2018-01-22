@@ -1,8 +1,10 @@
 
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 
 import { Critter } from '../models/critter.model';
 import { DnaService } from './dna.service';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class StorkService {
@@ -11,7 +13,8 @@ export class StorkService {
   dad: Critter;
   babe: Critter;
 
-  constructor(private dnaService: DnaService) {}
+  constructor(private dnaService: DnaService,
+              private snackBar: MatSnackBar) {}
 
   makeBabe( dad: Critter, mom: Critter ) {
 
@@ -21,7 +24,12 @@ export class StorkService {
     console.log( 'papa :', this.dad);
     console.log( 'mama :', this.mom);
 
+    this.snackBar.open('The storks have delivered this chub!', null, {
+      duration: 2000,
+    });
+
     this.babe = new Critter( this.mix() );
+
     console.log( this.babe );
     return this.babe;
   }

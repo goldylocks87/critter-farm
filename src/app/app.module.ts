@@ -43,7 +43,12 @@ import { CritterService } from './services/critter.service';
     MaterialModule,
     BrowserAnimationsModule
   ],
-  providers: [DataStorageService, DnaService, StorkService, CritterService],
+  providers: [
+    DataStorageService,
+    DnaService,
+    StorkService,
+    CritterService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
