@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
 
+import { MatSnackBar } from '@angular/material';
+
 import { Critter } from '../../models/critter.model';
 import { StorkService } from '../../services/stork.service';
 import { CritterService } from '../../services/critter.service';
@@ -15,39 +17,50 @@ import { CritterService } from '../../services/critter.service';
 export class CritterListComponent implements OnInit, OnDestroy {
 
   crittersChanged: Subscription;
+  newChubArrival: Subscription;
 
   critters: Critter[];
-  parentIds: number[];
-
-  readyForSex = new Subject<Critter[]>();
+  parentIds = [];
 
   constructor(private router: Router,
               private stork: StorkService,
-              private critterService: CritterService) { }
+              private critterService: CritterService,
+              private snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    this.crittersChanged = this.critterService.crittersChanged.subscribe(
-      (critters: Critter[]) => { this.critters = critters; console.log('~~~ critters from sub', critters); }
-    );
+
+    this.crittersChanged = this.critterService.crittersChanged
+      .subscribe( (critters: Critter[]) => { this.critters = critters; } );
     this.critters = this.critterService.getCritters();
-    this.parentIds = [];
+
+    this.newChubArrival = this.stork.newChubArrival
+      .subscribe( (critter: Critter) => {
+
+        this.snackBar.open('The storks just delivered a new lil chub, check out the breeding grounds!',
+          critter.name, { duration: 5000 });
+
+      });
   }
 
   selectForSex( index: number ) {
 
+    const startLength = this.parentIds.length;
+
     const inArray = this.parentIds.indexOf(index);
 
-    if( inArray == -1 ) this.parentIds.push(index);
-    else this.parentIds.splice( inArray, 1 );
+    if( inArray == -1 ) { this.parentIds.push(index); }
+    else { this.parentIds.splice( inArray, 1 ); }
 
-    if( this.parentIds.length >= 2 ) {
+    if( this.parentIds.length === 2 && startLength < 2 ) {
       let parents = [];
       for( let id of this.parentIds ) { parents.push( this.critters[id] ); }
 
-      this.readyForSex.next( parents );
-      console.log(parents);
-      this.stork.setParents( parents[0], parents[1] );
-      this.router.navigate(['/breed']);
+      this.stork.makeBabe( parents[0], parents[1] );
+      // this.router.navigate(['/breed']);
+    }
+    else if( this.parentIds.length > 2 && startLength < this.parentIds.length ) {
+      this.snackBar.open('You selected to many critters....this aint an orgy',
+        null, { duration: 5000 });
     }
   }
 
@@ -57,5 +70,6 @@ export class CritterListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.crittersChanged.unsubscribe();
+    this.newChubArrival.unsubscribe();
   }
 }

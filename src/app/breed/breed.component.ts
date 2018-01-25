@@ -23,29 +23,36 @@ export class BreedComponent implements OnInit {
   constructor( private stork: StorkService ) {}
 
   ngOnInit() {
+
+    this.dad = this.stork.dad;
+    this.mom = this.stork.mom;
+    this.babe = this.stork.babe;
+    // this.subscription = this.stork.newChubArrival
+    //   .subscribe( (critter: Critter) => { this.babe = critter; console.log('new chub :', critter); } );
+
     // default babe
-    this.babe = new Critter( '11111111' );
+    // if( !this.babe ) { this.babe = new Critter( '11111111' ); }
 
-    const parents = this.stork.getParents();
+    // const parents = this.stork.getParents();
 
-    if( parents !== null ) {
+    // if( parents !== null ) {
 
-      this.dad = new Critter(parents[0].dna, 'male');
-      this.mom = new Critter(parents[1].dna, 'female');
+    //   this.dad = new Critter(parents[0].dna, 'male');
+    //   this.mom = new Critter(parents[1].dna, 'female');
 
-      this.babe = this.stork.makeBabe(parents[0],parents[1]);
+    //   this.babe = this.stork.makeBabe(parents[0],parents[1]);
 
-      // this.form.setValue({ daddna: parents[0].dna, momdna: parents[1].dna });
-    }
+    //   // this.form.setValue({ daddna: parents[0].dna, momdna: parents[1].dna });
+    // }
   }
 
   onSubmit(form: NgForm) {
-    const value = form.value;
+    // const value = form.value;
 
-    this.dad = new Critter(value.daddna, 'male');
-    this.mom = new Critter(value.momdna, 'female');
+    // this.dad = new Critter(value.daddna, 'male');
+    // this.mom = new Critter(value.momdna, 'female');
 
-    this.babe = this.stork.makeBabe( this.dad, this.mom );
+    // this.babe = this.stork.makeBabe( this.dad, this.mom );
   }
 
 }

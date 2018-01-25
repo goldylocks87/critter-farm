@@ -23,7 +23,7 @@
 */
 
 .isSelected {
-  box-shadow: 0 0.2rem 0 0 #28a745;
+  color: lightgray;
 }
 
 .mat-slide-toggle {

@@ -1,20 +1,22 @@
-<!-- <h4 class="mat-h2">Select {{ parentIds.length < 1 ? 'two babes to breed together.' : 'one more babe!' }}</h4>
-<hr mat-ink-bar> -->
 <div id="wrapper" *ngFor="let critter of critters; let i = index" >
   <mat-card >
-    <mat-card-header>
-      <mat-card-title>Babe #{{ i + 1 }}</mat-card-title>
+    <!-- <mat-card-header>
+      <mat-card-title>{{ critter.name }}</mat-card-title>
       <mat-card-subtitle>DNA : {{ critter.dna }}</mat-card-subtitle>
-    </mat-card-header>
+    </mat-card-header> -->
     <div mat-card-image class="text-center" style="background-color: whitesmoke">
       <app-critter [critter]="critter"></app-critter>
     </div>
     <mat-card-content>
-        <p>
-          <strong>Gene List</strong>: {{ critter.geneList }}<br>
-        </p>
-      </mat-card-content>
-    <mat-slide-toggle (click)="selectForSex(i)">Select for sex</mat-slide-toggle>
-    <button mat-raised-button color="accent" (click)="checkOut(i)">Check me out!</button>
+      <p>
+        This is {{ critter.name }} {{ critter.sex === 'male' ? 'he' : 'she' }} cool as fuck. Check {{ critter.sex === 'male' ? 'him' : 'her' }} out!
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end" style="padding: 0;">
+      <button mat-icon-button color="primary" (click)="checkOut(i)">view</button>
+      <button mat-icon-button color="accent" (click)="selectForSex(i)" appSelect >breed</button>
+    </mat-card-actions>
+    <!-- <mat-slide-toggle (click)="selectForSex(i)">Select for sex</mat-slide-toggle>
+    <button mat-raised-button color="accent" (click)="checkOut(i)">Check me out!</button> -->
   </mat-card>
 </div>
