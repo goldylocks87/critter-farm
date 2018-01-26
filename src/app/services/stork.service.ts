@@ -5,6 +5,7 @@ import { Subject } from 'rxjs/Subject';
 
 import { Critter } from '../models/critter.model';
 import { DnaService } from './dna.service';
+import { CritterService } from './critter.service';
 
 @Injectable()
 export class StorkService {
@@ -15,7 +16,8 @@ export class StorkService {
   dad: Critter;
   babe: Critter;
 
-  constructor(private dnaService: DnaService) {}
+  constructor(private dnaService: DnaService,
+              private critterService: CritterService) {}
 
   makeBabe( dad: Critter, mom: Critter ) {
 
@@ -23,7 +25,8 @@ export class StorkService {
     this.mom = mom;
 
     this.babe = new Critter( this.mix() );
-    this.newChubArrival.next( this.babe )
+    this.newChubArrival.next( this.babe );
+    this.critterService.addToMyCritters( this.babe );
   }
 
   mix() {

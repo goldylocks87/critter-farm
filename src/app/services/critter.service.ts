@@ -6,23 +6,9 @@ export class CritterService {
 
   crittersChanged = new Subject<Critter[]>();
   private critters = [];
+  private myCritters = [];
 
-  constructor() {
-    // this.critters = [];
-    // this.critters.push( new Critter('00011001') );
-    // this.critters.push( new Critter('00010001') );
-    // this.critters.push( new Critter('00101011') );
-    // this.critters.push( new Critter('11001100') );
-    // this.critters.push( new Critter('00001111') );
-    // this.critters.push( new Critter('10101010') );
-    // this.critters.push( new Critter('10001000') );
-    // this.critters.push( new Critter('10000000') );
-    // this.critters.push( new Critter('00001010') );
-    // this.critters.push( new Critter('10101000') );
-    // this.critters.push( new Critter('00101111') );
-    // this.critters.push( new Critter('11111111') );
-    // this.critters.push( new Critter('10010011') );
-  }
+  constructor() {}
 
   getCritters() {
     return this.critters;
@@ -35,6 +21,22 @@ export class CritterService {
   setCritters( critters: Critter[] ) {
     this.critters = critters;
     this.crittersChanged.next( this.critters );
+  }
+
+  getMyCritters() {
+    return this.myCritters;
+  }
+
+  addToMyCritters( chub: Critter ) {
+    this.myCritters.push( chub );
+  }
+
+  getSampleCritters() {
+    return [  new Critter( '01011010' ),
+              new Critter( '10100011' ),
+              new Critter( '11011111' ),
+              new Critter( '00111000' ),
+              new Critter( '00100100' ) ];
   }
 
 }

@@ -1,0 +1,18 @@
+.chub {
+  margin: .5rem;
+  padding: 1rem;
+  max-width: 8rem;
+  display: inline-block;
+  text-align: center;
+  background-color: lightgray;
+  border-radius: 5%;
+}
+
+.chub:hover {
+  opacity: .8;
+}
+
+.chub-details {
+  margin: 0 .5rem;
+  padding: 0 1rem;
+}

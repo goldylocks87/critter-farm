@@ -1,0 +1,27 @@
+<div fxLayout
+      fxLayout.xs="column"
+      fxLayoutAlign="center"
+      fxLayoutGap=".5rem"
+      fxLayoutGap.xs="0">
+  <h3>Select a chub to visit the stork with!</h3>
+</div>
+<div fxLayout
+      fxLayout.xs="column"
+      fxLayoutAlign="center"
+      fxLayoutGap=".5rem"
+      fxLayoutGap.xs="0">
+
+  <div *ngFor="let critter of critters; let i = index" appSelect (click)="selectToBreed(i)">
+
+    <div mat-card-image class="chub" >
+      <app-critter [critter]="critter"></app-critter>
+    </div>
+
+    <div class="chub-details">
+      <span>{{ critter.name }}</span><br>
+      <span style="color: grey; font-size: 12px;">{{ critter.dna }}</span>
+    </div>
+
+  </div>
+
+</div>

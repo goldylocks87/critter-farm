@@ -18,9 +18,14 @@
     <div>
       <h2>This is {{ critter.name }}</h2>
       <strong>About me:</strong>
-      <p>Hi dude!  I have {{ critter.eyeColor }} eyes and a {{ critter.bodyColor }} colored body.  <br>I'm {{ critter.sex === 'male' ? 'a boy' : 'a girl' }} and I am {{ critter.isMutant ? 'a mutant.' : 'not a mutant.' }}</p>
+      <p>Hi dude!  I have {{ critter.eyeColor }} eyes and a {{ critter.bodyColor }} colored body.  I'm {{ critter.sex === 'male' ? 'a boy' : 'a girl' }} and I am {{ critter.isMutant ? 'a mutant.' : 'not a mutant.' }}</p>
       <strong>Birthday</strong>
       <p>{{ critter.bday }}</p>
+      <strong>Actions</strong>
+      <p>
+        <button mat-raised-button color="accent" appSelect (click)="openBreedingModal()">breed</button>
+        <button mat-raised-button color="accent" appSelect>release</button>
+      </p>
     </div>
   </mat-grid-tile>
 

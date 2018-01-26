@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { CritterListComponent } from './critters/critter-list/critter-list.component';
 import { BreedComponent } from './breed/breed.component';
 import { CritterDetailComponent } from './critters/critter-detail/critter-detail.component';
+import { MyCritterListComponent } from './critters/my-critter-list/my-critter-list.component';
 
 const appRoutes: Routes =[
   { path: '', component: CritterListComponent, pathMatch: 'full' },
   { path: 'critters', component: CritterListComponent },
   { path: 'breed', component: BreedComponent },
+  { path: 'mychubs', component: MyCritterListComponent },
   { path: 'detail', component: CritterDetailComponent }
 ];
 
