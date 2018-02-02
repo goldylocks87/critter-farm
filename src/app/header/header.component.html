@@ -1,4 +1,47 @@
-<nav mat-tab-nav-bar>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand"
+        [routerLink]="'/critters'"
+        routerLinkActive="active">Chubbies</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample07">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link"
+              [routerLink]="'/critters'"
+              routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+              [routerLink]="'/mychubs'"
+              routerLinkActive="active">My Chubs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+              [routerLink]="'/breed'"
+              routerLinkActive="active">Breed</a>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown07">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li> -->
+      </ul>
+      <form class="form-inline my-2 my-md-0">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- <nav mat-tab-nav-bar>
   <a mat-tab-link
       [routerLink]="'/critters'"
       routerLinkActive #rla="routerLinkActive"
@@ -14,4 +57,4 @@
       routerLinkActive #rla2="routerLinkActive"
       [active]="rla2.isActive">Breeding Grounds</a>
 </nav>
-
+ -->
