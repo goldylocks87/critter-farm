@@ -8,10 +8,11 @@
 <div fxLayout
       fxLayout.xs="column"
       fxLayoutAlign="center"
-      fxLayoutGap=".5rem"
-      fxLayoutGap.xs="0">
+      fxLayoutGap="2rem">
 
-  <div *ngFor="let critter of critters; let i = index" appSelect (click)="selectToBreed(i)">
+  <div *ngFor="let critter of critters; let i = index" appSelect
+      (click)="selectToBreed(i)"
+      style="min-width: 10rem;">
 
     <div mat-card-image class="chub" >
       <app-critter [critter]="critter"></app-critter>

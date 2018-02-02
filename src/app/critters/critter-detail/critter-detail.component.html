@@ -20,7 +20,7 @@
       <strong>About me:</strong>
       <p>Hi dude!  I have {{ critter.eyeColor }} eyes and a {{ critter.bodyColor }} colored body.  I'm {{ critter.sex === 'male' ? 'a boy' : 'a girl' }} and I am {{ critter.isMutant ? 'a mutant.' : 'not a mutant.' }}</p>
       <strong>Birthday</strong>
-      <p>{{ critter.bday }}</p>
+      <p>{{ critter.bday | date:'M/d/yy h:mm a' }}</p>
       <strong>Actions</strong>
       <p>
         <button mat-raised-button color="accent" appSelect (click)="openBreedingModal()">breed</button>

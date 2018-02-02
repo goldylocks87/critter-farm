@@ -27,6 +27,7 @@ import { CritterService } from './services/critter.service';
 import { MyCritterListComponent } from './critters/my-critter-list/my-critter-list.component';
 
 import { BreedModalComponent } from './shared/modals/breed-modal/breed-modal.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { BreedModalComponent } from './shared/modals/breed-modal/breed-modal.com
     BreedComponent,
     CritterDetailComponent,
     MyCritterListComponent,
-    BreedModalComponent
+    BreedModalComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

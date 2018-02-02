@@ -7,10 +7,6 @@ export class DnaService {
 
   constructor() {}
 
-  public createPunnet( mom: Critter, dad: Critter ) {
-
-  }
-
   public determineSex() {
     return Math.floor(Math.random() * 2) === 1 ? 'male' : 'female';
   }
@@ -63,6 +59,30 @@ export class DnaService {
     }
   }
 
+  public getBodyPattern( gene: string ) {
+    if( gene.indexOf('A') !== -1 && gene.indexOf('B') !== -1 ) {
+      return 0; // none
+    }
+    else if( gene.indexOf('A') !== -1 ) {
+      return 0; // none
+    }
+    else if( gene.indexOf('B') !== -1 ) {
+      return 0; // none
+    }
+    else if( gene.indexOf('a') !== -1 && gene.indexOf('b') !== -1 ) {
+      return 0; // none
+    }
+    else if( gene.indexOf('a') ) {
+      return 1; // stripes
+    }
+    else if( gene.indexOf('b') ) {
+      return 1; // stripes
+    }
+    else {
+      return 0; // none
+    }
+  }
+
   public createGeneList( dna: string ) {
     const dnaList = this.createDnaList(dna);
     let genes = [];
@@ -106,31 +126,4 @@ export class DnaService {
     return dna.match( new RegExp('.{1,' + length + '}', 'g') );
   }
 
-
-
-  // createPunnet( momDNA: string, dadDNA: string ) {
-
-  //   this.mom = new Critter( momDNA, null, null, this.chunk( momDNA, 4 ) );
-  //   this.dad = new Critter( dadDNA, null, null, this.chunk( dadDNA, 4 ) );
-
-  //   let outcomes = [];
-
-  //   outcomes.push( this.getEyeColor(this.momDNA[0]).substring(0, 1) + this.getEyeColor(this.dadDNA[0]).substring(1, 2) );
-  //   outcomes.push( this.getEyeColor(this.momDNA[0]).substring(1, 2) + this.getEyeColor(this.dadDNA[0]).substring(1, 2) );
-  //   outcomes.push( this.getEyeColor(this.dadDNA[0]).substring(0, 1) + this.getEyeColor(this.momDNA[0]).substring(1, 2) );
-  //   outcomes.push( this.getEyeColor(this.dadDNA[0]).substring(0, 1) + this.getEyeColor(this.momDNA[0]).substring(0, 1) );
-
-  //   console.log( 'punnett square :', outcomes );
-
-  //   // junky code to refactor //
-
-  //   const winningOutcome = outcomes[ Math.floor(Math.random() * outcomes.length) ];
-  //   let babe = new Critter( winningOutcome, '', '', '' );
-
-  //   const upperCase = winningOutcome.substring(0, 1).toUpperCase();
-  //   if( winningOutcome.indexOf(upperCase) !== -1 ) { babe.eyeColor = '#965dc0'; }
-  //   else { babe.eyeColor = '#57a0eb'; }
-
-  //   return babe;
-  // }
 }

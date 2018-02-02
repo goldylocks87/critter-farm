@@ -12,7 +12,9 @@ import {  MatButtonModule,
           MatSnackBarModule,
           MatSnackBar,
           MatDialog,
-          MatDialogModule} from '@angular/material';
+          MatDialogModule,
+          MatListModule,
+          MatSidenavModule} from '@angular/material';
 
 @NgModule({
   imports: [
@@ -27,7 +29,10 @@ import {  MatButtonModule,
     MatSlideToggleModule,
     MatGridListModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule,
+    MatSidenavModule,
+    MatIconModule
   ],
   declarations: [],
   exports: [
@@ -40,7 +45,10 @@ import {  MatButtonModule,
     MatCheckboxModule,
     MatSlideToggleModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule,
+    MatSidenavModule,
+    MatIconModule
   ],
   providers: [
     MatSnackBar,

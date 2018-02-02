@@ -5,7 +5,7 @@ import { DataStorageService } from '../services/data-storage.service';
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
-    styles: ['nav { margin-bottom: 1rem; }']
+    styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
 
