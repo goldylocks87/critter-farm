@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { AppComponent } from './app.component';
-import { MaterialModule } from './material-module/material.module';
 import { DataStorageService } from './services/data-storage.service';
 import { DnaService } from './services/dna.service';
 import { AppRoutingModule } from './app.routes';
@@ -22,6 +21,7 @@ import { BreedComponent } from './breed/breed.component';
 import { CritterDetailComponent } from './critters/critter-detail/critter-detail.component';
 import { CritterService } from './services/critter.service';
 import { MyCritterListComponent } from './critters/my-critter-list/my-critter-list.component';
+import { DropdownDirective } from './directives/dropdown.directive';
 
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
@@ -36,7 +36,8 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     BreedComponent,
     CritterDetailComponent,
     MyCritterListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
