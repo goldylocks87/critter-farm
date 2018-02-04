@@ -8,7 +8,7 @@
   display: inline-block;
 }
 
-.text-center {
+.text-center, .card-img-top {
   text-align: center;
 }
 

@@ -1,36 +1,29 @@
-<mat-grid-list cols="4" rowHeight="100px" gutterSize="0">
+<div class="container">
 
-  <mat-grid-tile
-      colspan="4"
-      rowspan="4"
-      [style.background]="'#f9f8f6'">
-    <app-critter style="text-align:center;" [critter]="critter"></app-critter>
-  </mat-grid-tile>
+  <div class="row justify-content-md-center" style="text-align:center; background-color: rgb(249, 248, 246)" >
+    <div class="col-md-4 text-center">
 
-  <!-- <mat-grid-tile
-      colspan="1"
-      rowspan="3"></mat-grid-tile> -->
+      <app-critter [critter]="critter"></app-critter>
 
-  <mat-grid-tile
-      colspan="4"
-      rowspan="3"
-      style="margin: 0 1rem;">
-    <div>
-      <h2>This is {{ critter.name }}</h2>
-      <strong>About me:</strong>
-      <p>Hi dude!  I have {{ critter.eyeColor }} eyes and a {{ critter.bodyColor }} colored body.  I'm {{ critter.sex === 'male' ? 'a boy' : 'a girl' }} and I am {{ critter.isMutant ? 'a mutant.' : 'not a mutant.' }}</p>
-      <strong>Birthday</strong>
-      <p>{{ critter.bday | date:'M/d/yy h:mm a' }}</p>
-      <strong>Actions</strong>
-      <p>
-        <button mat-raised-button color="accent" appSelect (click)="openBreedingModal()">breed</button>
-        <button mat-raised-button color="accent" appSelect>release</button>
-      </p>
     </div>
-  </mat-grid-tile>
+  </div>
 
-  <!-- <mat-grid-tile
-      colspan="1"
-      rowspan="3"></mat-grid-tile> -->
+  <div class="row pt-3">
+    <div class="col">
 
-</mat-grid-list>
+      <div>
+        <h2>This is {{ critter.name }}</h2>
+        <strong>About me:</strong>
+        <p>Hi dude!  I have {{ critter.eyeColor }} eyes and a {{ critter.bodyColor }} colored body.  I'm {{ critter.sex === 'male' ? 'a boy' : 'a girl' }} and I am {{ critter.isMutant ? 'a mutant.' : 'not a mutant.' }}</p>
+        <strong>Birthday</strong>
+        <p>{{ critter.bday | date:'M/d/yy h:mm a' }}</p>
+        <strong>Actions</strong>
+        <p>
+          <button type="button" class="btn btn-success" appSelect (click)="openBreedingModal()">breed</button>
+          <button type="button" class="btn btn-success" appSelect>battle</button>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>

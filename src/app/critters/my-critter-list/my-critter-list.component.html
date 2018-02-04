@@ -1,58 +1,26 @@
-<div fxLayout
-      fxLayout.xs="column"
-      fxLayoutAlign="center"
-      fxLayoutGap=".5rem"
-      fxLayoutGap.xs="0">
-  <div fxFlex>
+<div class="container">
+
+  <div class="row mb-4">
     <h2>My Profile</h2>
-    <button mat-button [matMenuTriggerFor]="menu">Settings</button>
-    <mat-menu #menu>
-      <button mat-menu-item>My Info</button>
-      <button mat-menu-item>My Account</button>
-    </mat-menu>
   </div>
-</div>
 
-<div fxLayout
-      fxLayout.xs="column"
-      fxLayoutAlign="center"
-      fxLayoutGap=".5rem"
-      fxLayoutGap.xs="0">
-  <div fxFlex>
-    <mat-tab-group>
-      <mat-tab label="Current Chubs"></mat-tab>
-    </mat-tab-group>
-  </div>
-</div>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let critter of critters; let i = index">
 
-<div fxLayout
-      fxLayout.xs="column"
-      fxLayoutAlign="center"
-      fxLayoutGap=".5rem"
-      fxLayoutGap.xs="0">
-  <div *ngFor="let critter of critters; let i = index">
-    <div mat-card-image class="chub" >
-      <app-critter [critter]="critter"></app-critter>
-    </div>
-    <div class="chub-details">
-      <span>{{ critter.name }} - {{ critter.sex }}</span><br>
-      <span style="color: grey; font-size: 12px;">{{ critter.dna }}</span>
+      <div class="card mb-4 box-shadow chub">
+        <div class="card-img-top" style="text-align: center" >
+          <app-critter [critter]="critter"></app-critter>
+        </div>
+
+        <div class="card-body">
+          <p class="card-text">
+            <span>{{ critter.name }} - {{ critter.sex }}</span><br>
+            <span style="color: grey; font-size: 12px;">{{ critter.dna }}</span>
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
 
-<!-- <div id="wrapper" *ngFor="let critter of critters; let i = index" >
-  <mat-card >
-    <div mat-card-image class="text-center" style="background-color: whitesmoke; text-align: center;">
-      <app-critter [critter]="critter"></app-critter>
-    </div>
-    <mat-card-content>
-      <p>
-        This is {{ critter.name }} {{ critter.sex === 'male' ? 'he' : 'she' }} cool as fuck. Check {{ critter.sex === 'male' ? 'him' : 'her' }} out!
-      </p>
-    </mat-card-content>
-    <mat-card-actions align="end" style="padding: 0;">
-      <button mat-icon-button color="primary" (click)="checkOut(i)">view</button>
-    </mat-card-actions>
-  </mat-card>
-</div> -->
+</div>

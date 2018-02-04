@@ -1,22 +1,30 @@
-<div id="wrapper" *ngFor="let critter of critters; let i = index" >
-  <mat-card >
-    <!-- <mat-card-header>
-      <mat-card-title>{{ critter.name }}</mat-card-title>
-      <mat-card-subtitle>DNA : {{ critter.dna }}</mat-card-subtitle>
-    </mat-card-header> -->
-    <div mat-card-image class="text-center" style="background-color: whitesmoke">
-      <app-critter [critter]="critter"></app-critter>
+<div class="album py-5 bg-light">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-3" *ngFor="let critter of critters; let i = index">
+
+        <div class="card mb-4 box-shadow">
+          <div class="card-img-top" >
+            <app-critter [critter]="critter"></app-critter>
+          </div>
+
+          <div class="card-body">
+            <p class="card-text">
+              This is {{ critter.name }}.
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary" (click)="checkOut(i)">View</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" (click)="selectForSex(i)" appSelect>Breed</button>
+              </div>
+              <small class="text-muted">{{ calcAge(critter.bday) }}</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <mat-card-content>
-      <p>
-        This is {{ critter.name }} {{ critter.sex === 'male' ? 'he' : 'she' }} cool as fuck. Check {{ critter.sex === 'male' ? 'him' : 'her' }} out!
-      </p>
-    </mat-card-content>
-    <mat-card-actions align="end" style="padding: 0;">
-      <button mat-icon-button color="primary" (click)="checkOut(i)"><i class="material-icons">perm_identity</i></button>
-      <button mat-icon-button color="accent" (click)="selectForSex(i)" appSelect ><i class="material-icons">spa</i></button>
-    </mat-card-actions>
-    <!-- <mat-slide-toggle (click)="selectForSex(i)">Select for sex</mat-slide-toggle>
-    <button mat-raised-button color="accent" (click)="checkOut(i)">Check me out!</button> -->
-  </mat-card>
+
+  </div>
 </div>

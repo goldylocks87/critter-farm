@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router/';
 import { DatePipe } from '@angular/common';
 
-import { BreedModalComponent } from '../../shared/modals/breed-modal/breed-modal.component';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-
 import { Critter } from '../../models/critter.model';
 import { CritterService } from '../../services/critter.service';
 
@@ -18,8 +15,7 @@ export class CritterDetailComponent implements OnInit {
   critter: Critter;
 
   constructor(private route: ActivatedRoute,
-              private critterService: CritterService,
-              public dialog: MatDialog) { }
+              private critterService: CritterService) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(
@@ -31,10 +27,6 @@ export class CritterDetailComponent implements OnInit {
   }
 
   openBreedingModal(): void {
-    const breedModal = this.dialog.open( BreedModalComponent );
-    breedModal.componentInstance.critter = this.critter;
-    breedModal.afterClosed().subscribe(result => {
-      console.log(result);
-    });
+
   }
 }

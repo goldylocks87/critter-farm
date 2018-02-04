@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
 
-import { MatSnackBar } from '@angular/material';
-
 import { Critter } from '../../models/critter.model';
 import { StorkService } from '../../services/stork.service';
 import { CritterService } from '../../services/critter.service';
@@ -24,8 +22,7 @@ export class CritterListComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router,
               private stork: StorkService,
-              private critterService: CritterService,
-              private snackBar: MatSnackBar) { }
+              private critterService: CritterService) { }
 
   ngOnInit() {
 
@@ -35,12 +32,17 @@ export class CritterListComponent implements OnInit, OnDestroy {
 
     this.newChubArrival = this.stork.newChubArrival
       .subscribe( (critter: Critter) => {
-
-        this.snackBar.open('The storks just delivered a new lil chub, check out the breeding grounds!',
-          critter.name, { duration: 5000 });
-
+        // do something
       });
   }
+
+  calcAge( bday: Date ) {
+    let age = ( Date.now() - new Date( bday ).getTime() ) / 3600000 / 24;
+    age = Math.floor( age );
+    return age + ' Days';
+  }
+
+  // click functions
 
   selectForSex( index: number ) {
 
