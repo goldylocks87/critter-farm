@@ -58,12 +58,9 @@ export class CritterListComponent implements OnInit, OnDestroy {
       for( let id of this.parentIds ) { parents.push( this.critters[id] ); }
 
       this.stork.makeBabe( parents[0], parents[1] );
-      // this.router.navigate(['/breed']);
+      this.router.navigate(['/breed']);
     }
-    else if( this.parentIds.length > 2 && startLength < this.parentIds.length ) {
-      this.snackBar.open('You selected to many critters....this aint an orgy',
-        null, { duration: 5000 });
-    }
+
   }
 
   checkOut( index: number ) {
