@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
 
-import { MatSnackBar } from '@angular/material';
-
 import { Critter } from '../../models/critter.model';
 import { StorkService } from '../../services/stork.service';
 import { CritterService } from '../../services/critter.service';
@@ -24,8 +22,7 @@ export class MyCritterListComponent implements OnInit {
 
   constructor(private router: Router,
               private stork: StorkService,
-              private critterService: CritterService,
-              private snackBar: MatSnackBar) { }
+              private critterService: CritterService) { }
 
   ngOnInit() {
 
