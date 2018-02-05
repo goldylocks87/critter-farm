@@ -4,17 +4,14 @@
         [routerLink]="'/critters'"
         routerLinkActive="active">Chubbies</a>
 
-    <button class="navbar-toggler collapsed"
-            type="button" data-toggle="collapse"
-            data-target="#navigation"
-            aria-controls="navigation"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+    <button class="navbar-toggler"
+            type="button"
+            (click)="isCollapsed = !isCollapsed"
             >
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navigation">
+    <div class="collapse navbar-collapse" [ngbCollapse]="isCollapsed">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link"

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // for svgs
 import { HttpClientModule } from '@angular/common/http';
@@ -46,7 +47,8 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     HttpModule,
     HttpClientModule,
     AngularSvgIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule.forRoot()
   ],
   providers: [
     DataStorageService,

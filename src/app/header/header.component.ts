@@ -9,6 +9,8 @@ import { DataStorageService } from '../services/data-storage.service';
 })
 export class HeaderComponent {
 
+  isCollapsed = true; // toggles the hamburger dropdown
+
   constructor(private router: Router,
               private dataService: DataStorageService) {}
 
