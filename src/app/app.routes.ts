@@ -6,6 +6,8 @@ import { CritterListComponent } from './critters/critter-list/critter-list.compo
 import { BreedComponent } from './breed/breed.component';
 import { CritterDetailComponent } from './critters/critter-detail/critter-detail.component';
 import { MyCritterListComponent } from './critters/my-critter-list/my-critter-list.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 const appRoutes: Routes =[
@@ -14,6 +16,8 @@ const appRoutes: Routes =[
   { path: 'breed', component: BreedComponent },
   { path: 'mychubs', component: MyCritterListComponent },
   { path: 'detail', component: CritterDetailComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'signin', component: SigninComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

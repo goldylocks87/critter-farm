@@ -25,6 +25,7 @@ import { MyCritterListComponent } from './critters/my-critter-list/my-critter-li
 import { DropdownDirective } from './directives/dropdown.directive';
 
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { AuthService } from './auth/auth.service';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 
@@ -55,6 +56,7 @@ import { SignupComponent } from './auth/signup/signup.component';
     NgbModule.forRoot()
   ],
   providers: [
+    AuthService,
     DataStorageService,
     DnaService,
     StorkService,
