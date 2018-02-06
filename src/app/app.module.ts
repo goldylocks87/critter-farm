@@ -25,6 +25,8 @@ import { MyCritterListComponent } from './critters/my-critter-list/my-critter-li
 import { DropdownDirective } from './directives/dropdown.directive';
 
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     CritterDetailComponent,
     MyCritterListComponent,
     PageNotFoundComponent,
-    DropdownDirective
+    DropdownDirective,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
