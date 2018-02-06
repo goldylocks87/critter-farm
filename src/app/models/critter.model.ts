@@ -1,7 +1,8 @@
 import { ReflectiveInjector } from '@angular/core';
-
-import { DnaService } from '../services/dna.service';
 import * as names from 'people-names';
+
+import { BodyPattern } from './body-pattern.model';
+import { DnaService } from '../services/dna.service';
 
 export class Critter {
 
@@ -15,12 +16,13 @@ export class Critter {
               public isMutant?: boolean,
               public name?: string,
               public bday?: Date,
-              public stripe?: any) {
+              public stripe?: any,
+              public bodyPattern?: BodyPattern) {
 
     // so that we dont have to provide the service in the constructor when creating critters
     this.dnaService = ReflectiveInjector.resolveAndCreate([DnaService]).get(DnaService);
 
-    if( !this.geneList && this.dna.length >= 8 ) { this.createGenes(); }
+    if( !this.geneList && this.dna.length >= 12 ) { this.createGenes(); }
 
   }
 
@@ -29,22 +31,17 @@ export class Critter {
     this.geneList = this.dnaService.createGeneList(this.dna);
     this.eyeColor = this.dnaService.getEyeColor( this.geneList[0] );
     this.bodyColor = this.dnaService.getBodyColor( this.geneList[1] );
+    this.bodyPattern = this.dnaService.getBodyPattern( this.geneList[2] );
     this.isMutant = this.checkForMutation();
 
     if( !this.sex ) { this.sex = this.dnaService.determineSex(); }
 
     if( !this.name && this.sex ) { this.name = this.sex === 'male' ? names.maleRandomEn() : names.femaleRandomEn(); }
 
-    if( this.isMutant === true ) {
-      this.stripe = { opacity: 1, fill: '#5E5C5C' };
-    } else {
-      this.stripe = { opacity: 0, fill: '#5E5C5C' };
-    }
-
     if( !this.bday ) { this.bday = new Date(); }
   }
 
   private checkForMutation() {
-    return Math.floor(Math.random() * 5) === 1;
+    return Math.floor( Math.random() * 5 ) === 1;
   }
 }

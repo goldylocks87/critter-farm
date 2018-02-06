@@ -1,31 +1,9 @@
-#wrapper {
-  display: inline;
-}
-
-.mat-card {
-  margin: .5rem;
-  max-width: 8rem;
-  display: inline-block;
-}
-
 .text-center, .card-img-top {
   text-align: center;
 }
-
-/* .mat-card:hover {
-  cursor: pointer;
-} */
-
-/*
-.card:active {
-  background-color: grey;
-}
-*/
 
 .isSelected {
   color: lightgray;
 }
 
-.mat-slide-toggle {
-  margin-bottom: .5rem;
-}
+

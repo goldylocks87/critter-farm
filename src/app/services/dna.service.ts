@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Critter } from '../models/critter.model';
+import { BodyPattern } from '../models/body-pattern.model';
 
 @Injectable()
 export class DnaService {
@@ -59,27 +60,27 @@ export class DnaService {
     }
   }
 
-  public getBodyPattern( gene: string ) {
+  public getBodyPattern( gene: string ): BodyPattern {
     if( gene.indexOf('A') !== -1 && gene.indexOf('B') !== -1 ) {
-      return 0; // none
+      return new BodyPattern( 'none', 0, '' ); // none
     }
     else if( gene.indexOf('A') !== -1 ) {
-      return 0; // none
+      return new BodyPattern( 'none', 0, '' ); // none
     }
     else if( gene.indexOf('B') !== -1 ) {
-      return 0; // none
+      return new BodyPattern( 'none', 0, '' ); // none
     }
     else if( gene.indexOf('a') !== -1 && gene.indexOf('b') !== -1 ) {
-      return 0; // none
+      return new BodyPattern( 'none', 0, '' ); // none
     }
     else if( gene.indexOf('a') ) {
-      return 1; // stripes
+      return new BodyPattern( 'stripe', 1, '#5E5C5C' ); // stripes
     }
     else if( gene.indexOf('b') ) {
-      return 1; // stripes
+      return new BodyPattern( 'stripe', 1, '#5E5C5C' ); // stripes
     }
     else {
-      return 0; // none
+      return new BodyPattern( 'none', 0, '' ); // none
     }
   }
 

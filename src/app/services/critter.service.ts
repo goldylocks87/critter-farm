@@ -32,11 +32,11 @@ export class CritterService {
   }
 
   getSampleCritters() {
-    return [  new Critter( '01011010' ),
-              new Critter( '10100011' ),
-              new Critter( '11011111' ),
-              new Critter( '00111000' ),
-              new Critter( '00100100' ) ];
+    return [  new Critter( '010110100000' ),
+              new Critter( '101000111111' ),
+              new Critter( '110111110000' ),
+              new Critter( '001110001111' ),
+              new Critter( '001001000000' ) ];
   }
 
 }
