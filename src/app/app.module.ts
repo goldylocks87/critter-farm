@@ -28,6 +28,8 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 import { AuthService } from './auth/auth.service';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { BattleComponent } from './battle/battle.component';
+import { BattleCardComponent } from './battle/battle-card/battle-card.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { SignupComponent } from './auth/signup/signup.component';
     PageNotFoundComponent,
     DropdownDirective,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    BattleComponent,
+    BattleCardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,53 @@
+<div class="card mb-4 box-shadow">
+  <div class="card-img-top text-center" >
+    <app-critter [critter]="critter"></app-critter>
+  </div>
+
+  <div class="card-body">
+
+    <div class="justify-content-between align-items-center">
+      <div class="row">
+        <div class="col col-md-6 pr-md-0">
+          <button type="button"
+                  class="btn btn-block btn-outline-secondary"
+                  (click)="doMove(critter.battleInfo.moves[0])" >
+            {{ critter.battleInfo.moves[0].name }}
+          </button>
+        </div>
+        <div class="col col-md-6">
+          <button type="button"
+                  class="btn btn-block btn-outline-secondary"
+                  (click)="doMove(critter.battleInfo.moves[1])" >
+            {{ critter.battleInfo.moves[1].name }}
+          </button>
+        </div>
+      </div>
+      <div class="row mt-md-2">
+        <div class="col col-md-6 pr-md-0">
+          <button type="button"
+                  class="btn btn-block btn-outline-secondary"
+                  (click)="doMove(critter.battleInfo.moves[2])" >
+            {{ critter.battleInfo.moves[2].name }}
+          </button>
+        </div>
+        <div class="col col-md-6">
+          <button type="button"
+                  class="btn btn-block btn-outline-secondary"
+                  (click)="doMove(critter.battleInfo.moves[3])" >
+            {{ critter.battleInfo.moves[3].name }}
+          </button>
+        </div>
+      </div>
+      <!-- <small class="text-muted">{{ calcAge(critter.bday) }}</small> -->
+    </div>
+
+    <div class="progress mt-2">
+      <div class="progress-bar {{ critter.battleInfo.totalLife >= 40 ? 'bg-success' : 'bg-danger' }}"
+            role="progressbar"
+            [style.width]="critter.battleInfo.totalLife + '%'">
+        {{ critter.battleInfo.totalLife }}
+      </div>
+    </div>
+
+  </div>
+</div>

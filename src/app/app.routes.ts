@@ -9,12 +9,14 @@ import { MyCritterListComponent } from './critters/my-critter-list/my-critter-li
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { BattleComponent } from './battle/battle.component';
 
 const appRoutes: Routes =[
   { path: '', redirectTo: '/critters', pathMatch: 'full' },
   { path: 'critters', component: CritterListComponent },
   { path: 'breed', component: BreedComponent },
   { path: 'mychubs', component: MyCritterListComponent },
+  { path: 'battle', component: BattleComponent },
   { path: 'detail', component: CritterDetailComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
