@@ -26,7 +26,4 @@ export class CritterDetailComponent implements OnInit {
     );
   }
 
-  openBreedingModal(): void {
-
-  }
 }

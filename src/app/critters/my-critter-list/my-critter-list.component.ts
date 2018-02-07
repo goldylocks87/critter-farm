@@ -12,9 +12,9 @@ import { CritterService } from '../../services/critter.service';
   templateUrl: './my-critter-list.component.html',
   styleUrls: ['./my-critter-list.component.css']
 })
-export class MyCritterListComponent implements OnInit {
+export class MyCritterListComponent implements OnInit, OnDestroy {
 
-  crittersChanged: Subscription;
+  userCrittersChanged: Subscription;
   newChubArrival: Subscription;
 
   critters: Critter[];
@@ -25,17 +25,19 @@ export class MyCritterListComponent implements OnInit {
               private critterService: CritterService) { }
 
   ngOnInit() {
+    this.userCrittersChanged = this.critterService.userCrittersChanged
+      .subscribe( (critters: Critter[]) => { this.critters = critters; } );
 
-    // this.critters = this.critterService.getMyCritters();
-    this.critters = this.critterService.getSampleCritters();
+    this.critters = this.critterService.getUserCritters();
+    // this.critters = this.critterService.getSampleCritters();
   }
 
   checkOut( index: number ) {
     this.router.navigate(['/detail'], { queryParams: { id: index } });
   }
 
-  // ngOnDestroy() {
-  //   this.crittersChanged.unsubscribe();
-  //   this.newChubArrival.unsubscribe();
-  // }
+  ngOnDestroy() {
+    this.userCrittersChanged.unsubscribe();
+    // this.newChubArrival.unsubscribe();
+  }
 }

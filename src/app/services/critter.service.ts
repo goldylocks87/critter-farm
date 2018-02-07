@@ -5,8 +5,10 @@ import { Critter } from '../models/critter.model';
 export class CritterService {
 
   crittersChanged = new Subject<Critter[]>();
+  userCrittersChanged = new Subject<Critter[]>();
+
   private critters = [];
-  private myCritters = [];
+  private userCritters = [];
 
   constructor() {}
 
@@ -23,12 +25,17 @@ export class CritterService {
     this.crittersChanged.next( this.critters );
   }
 
-  getMyCritters() {
-    return this.myCritters;
+  getUserCritters() {
+    return this.userCritters;
   }
 
-  addToMyCritters( chub: Critter ) {
-    this.myCritters.push( chub );
+  setUserCritters( critters: Critter[] ) {
+    this.userCritters = critters ? critters : [];
+    this.userCrittersChanged.next( this.userCritters );
+  }
+
+  addToUserCritters( chub: Critter ) {
+    this.userCritters.push( chub );
   }
 
   getSampleCritters() {

@@ -20,23 +20,41 @@
         <li class="nav-item">
           <a class="nav-link"
               [routerLink]="'/mychubs'"
-              routerLinkActive="active">My Chubs</a>
+              routerLinkActive="active"
+              *ngIf="authService.isAuthenticated()">My Chubs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link"
               [routerLink]="'/breed'"
-              routerLinkActive="active">Breed</a>
+              routerLinkActive="active"
+              *ngIf="authService.isAuthenticated()">Breed</a>
         </li>
         <li class="nav-item">
           <a class="nav-link"
               [routerLink]="'/battle'"
-              routerLinkActive="active">Battle</a>
+              routerLinkActive="active"
+              *ngIf="authService.isAuthenticated()">Battle</a>
         </li>
-        <li class="nav-item dropdown" appDropdown (click)="isSettingsCollapsed = !isSettingsCollapsed" >
+        <li class="nav-item dropdown" appDropdown
+            (click)="isSettingsCollapsed = !isSettingsCollapsed"
+            *ngIf="!authService.isAuthenticated()" >
           <a class="nav-link dropdown-toggle">Settings</a>
-          <div class="dropdown-menu" [ngClass]="{'show': !isSettingsCollapsed}" aria-labelledby="signin options">
+          <div class="dropdown-menu"
+                [ngClass]="{ 'show' : !isSettingsCollapsed }"
+                aria-labelledby="signin options">
             <a class="dropdown-item" [routerLink]="'/signin'">Signin</a>
             <a class="dropdown-item" [routerLink]="'/signup'">Signup</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown" appDropdown
+            (click)="isSettingsCollapsed = !isSettingsCollapsed"
+            *ngIf="authService.isAuthenticated()" >
+          <a class="nav-link dropdown-toggle">Data</a>
+          <div class="dropdown-menu"
+                [ngClass]="{ 'show' : !isSettingsCollapsed }"
+                aria-labelledby="signin options">
+            <a (click)="onSaveData()" class="dropdown-item" >Save Data</a>
+            <a (click)="onFetchData()" class="dropdown-item" >Fetch Data</a>
           </div>
         </li>
       </ul>

@@ -26,7 +26,7 @@ export class StorkService {
 
     this.babe = new Critter( this.mix() );
     this.newChubArrival.next( this.babe );
-    this.critterService.addToMyCritters( this.babe );
+    this.critterService.addToUserCritters( this.babe );
   }
 
   mix() {

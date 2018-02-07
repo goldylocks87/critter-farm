@@ -22,7 +22,7 @@ export class Critter {
     // so that we dont have to provide the service in the constructor when creating critters
     this.dnaService = ReflectiveInjector.resolveAndCreate([DnaService]).get(DnaService);
 
-    if( !this.geneList && this.dna.length >= 12 ) { this.createGenes(); }
+    if( this.dna.length >= 12 ) { this.createGenes(); }
 
   }
 

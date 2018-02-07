@@ -31,4 +31,19 @@ export class DataStorageService {
       );
   }
 
+  storeUserCritters( token: string ) {
+    this.http.put( 'https://critter-farm.firebaseio.com/users/' + token + '/critters.json',
+                    this.critterService.getUserCritters() )
+      .subscribe( httpResponse => console.log(httpResponse) );
+  }
+
+  fetchUserCritters( token: string ) {
+    this.http.get( 'https://critter-farm.firebaseio.com/users/' + token + '/critters.json' )
+      .subscribe(
+        (response: Response) => {
+          this.critterService.setUserCritters( response.json() ); // use response from WS
+        }
+      );
+  }
+
 }
