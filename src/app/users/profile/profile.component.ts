@@ -11,7 +11,7 @@ export class ProfileComponent implements OnInit {
 
   constructor() {
     this.user = {
-      'name': 'Al',
+      'name': 'Alec Myballz',
       'email': 'test@test.com'
     };
   }

@@ -1,0 +1,6 @@
+#banner {
+  background-image: url("../../assets/bg5.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  box-shadow: 0 .1em 1em #868e96;
+}

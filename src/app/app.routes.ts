@@ -11,10 +11,11 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { BattleComponent } from './battle/battle.component';
 import { ProfileComponent } from './users/profile/profile.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes =[
   { path: '', redirectTo: '/critters', pathMatch: 'full' },
-  { path: 'critters', component: CritterListComponent },
+  { path: 'critters', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'breed', component: BreedComponent },
   { path: 'mychubs', component: MyCritterListComponent },

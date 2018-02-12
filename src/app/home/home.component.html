@@ -1,0 +1,15 @@
+<div class="position-relative overflow-hidden p-3 text-center bg-white" id="banner">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">Welcome to the Chub Farm!</h1>
+    <p class="lead font-weight-normal">
+      Start collecting chubs today!  You can adopt em, you can breed em, you can battle em.
+    </p>
+    <a class="btn btn-outline-primary text-primary"
+        [routerLink]="'/signup'"
+        [hidden]="authService.isAuthenticated()">Sign up</a>
+  </div>
+  <!-- <div class="product-device box-shadow d-none d-md-block"></div>
+  <div class="product-device product-device-2 box-shadow d-none d-md-block"></div> -->
+</div>
+
+<app-critter-list></app-critter-list>

@@ -33,6 +33,7 @@ import { BattleCardComponent } from './battle/battle-card/battle-card.component'
 import { OpponentSelectionModalComponent } from './battle/opponent-selection-modal/opponent-selection-modal.component';
 import { CritterCardComponent } from './critters/critter-card/critter-card.component';
 import { ProfileComponent } from './users/profile/profile.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { ProfileComponent } from './users/profile/profile.component';
     BattleCardComponent,
     OpponentSelectionModalComponent,
     CritterCardComponent,
-    ProfileComponent
+    ProfileComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

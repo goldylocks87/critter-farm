@@ -12,7 +12,6 @@ import { AuthService } from '../auth/auth.service';
 export class HeaderComponent {
 
   isCollapsed = true; // toggles the hamburger dropdown
-  isSettingsCollapsed = true; // toggles the setting dropdown
 
   constructor(private router: Router,
               private dataService: DataStorageService,
