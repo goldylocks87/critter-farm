@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output } from '@angular/core';
 
 import { Subscription } from 'rxjs/Subscription';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { Subject } from 'rxjs/Subject';
+import { NgbModal, ModalDismissReasons, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 import { CritterService } from '../../services/critter.service';
 import { Critter } from '../../models/critter.model';
@@ -13,9 +14,13 @@ import { Critter } from '../../models/critter.model';
 })
 export class OpponentSelectionModalComponent implements OnInit, OnDestroy {
 
-  closeResult: string;
-  critters: Critter[];
+  critters: Critter[]; // available critters for selection
   userCrittersChanged: Subscription;
+
+  @Output() critterSelected = new Subject<Critter>();
+
+  modalRef: NgbModalRef;
+  closeResult: string;
 
   constructor(private modalService: NgbModal,
               private critterService: CritterService) {}
@@ -28,21 +33,18 @@ export class OpponentSelectionModalComponent implements OnInit, OnDestroy {
   }
 
   open(content) {
-    this.modalService.open(content, { size: 'lg' }).result
+    this.modalRef = this.modalService.open(content, { size: 'lg' });
+
+    this.modalRef.result
       .then(
         (result) => { this.closeResult = `Closed with: ${result}`; },
         (reason) => { this.closeResult = `Dismissed ${this.getDismissReason(reason)}`; }
       );
   }
 
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
+  onSelect(critter: Critter) {
+    this.critterSelected.next( critter );
+    this.modalRef.close();
   }
 
   ngOnDestroy() {

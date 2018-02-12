@@ -1,7 +1,12 @@
+<!-- launches the modal -->
+<button class="btn btn-lg btn-outline-primary"
+        (click)="open(content)">Select a Chub</button>
+
+<!-- modal content -->
 <ng-template #content let-c="close" let-d="dismiss">
 
   <div class="modal-header">
-    <h4 class="modal-title">Select a critter</h4>
+    <h4 class="modal-title">Select a chub!</h4>
     <button type="button"
             class="close"
             aria-label="Close"
@@ -10,14 +15,15 @@
     </button>
   </div>
 
-  <div class="modal-body">
+  <div class="modal-body text-center">
     <div class="card-deck">
 
-        <app-critter-card
-            *ngFor="let critter of critters; let i = index"
-            [critter]="critter"
-            [displayDetails]="false"
-            style="max-width: 15rem;"></app-critter-card>
+      <app-critter-card
+          *ngFor="let critter of critters; let i = index"
+          [critter]="critter"
+          [displayDetails]="false"
+          (click)="onSelect(critter)"
+          style="max-width: 15rem;"></app-critter-card>
 
       </div>
   </div>
@@ -29,5 +35,3 @@
   </div>
 
 </ng-template>
-
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Select an Opponent</button>

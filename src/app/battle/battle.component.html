@@ -1,20 +1,42 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <div class="card text-center p-5">
-        <app-opponent-selection-modal></app-opponent-selection-modal>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card text-center p-5">
-        <div class="crad-body">
-          <app-opponent-selection-modal></app-opponent-selection-modal>
+  <div class="row justify-content-center">
+    <div class="col-6 col-sm-5 col-lg-4">
+
+      <app-battle-card
+          *ngIf="challenger"
+          [critter]="challenger"
+          [isChallenger]="true"></app-battle-card>
+
+      <div class="card text-center p-5"
+            style="min-height: 15rem;"
+            *ngIf="!challenger">
+        <div class="card-body mt-4">
+          <app-opponent-selection-modal
+            (critterSelected)="onSelect( true, $event )"></app-opponent-selection-modal>
         </div>
       </div>
+
+    </div>
+    <div class="col-6 col-sm-5 col-lg-4">
+
+      <app-battle-card
+          *ngIf="opponent"
+          [critter]="opponent"
+          [isChallenger]="false"></app-battle-card>
+
+      <div class="card text-center p-5"
+            style="min-height: 15rem;"
+            *ngIf="!opponent">
+        <div class="card-body mt-4">
+          <app-opponent-selection-modal
+            (critterSelected)="onSelect( false, $event )"></app-opponent-selection-modal>
+        </div>
+      </div>
+
     </div>
   </div>
 
-
+<!--
   <div class="row justify-content-md-center">
     <div class="col text-center">
       <h4>
@@ -38,6 +60,6 @@
       <app-battle-card [critter]="opponent" [isChallenger]="false"></app-battle-card>
     </div>
 
-  </div>
+  </div> -->
 </div>
 

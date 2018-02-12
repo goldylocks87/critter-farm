@@ -20,7 +20,8 @@
         <li class="nav-item">
           <a class="nav-link"
               [routerLink]="'/profile'"
-              routerLinkActive="active">My Profile</a>
+              routerLinkActive="active"
+              *ngIf="authService.isAuthenticated()">My Profile</a>
         </li>
         <li class="nav-item">
           <a class="nav-link"
@@ -31,7 +32,8 @@
         <li class="nav-item">
           <a class="nav-link"
               [routerLink]="'/battle'"
-              routerLinkActive="active">Battle</a>
+              routerLinkActive="active"
+              *ngIf="authService.isAuthenticated()">Battle</a>
         </li>
         <li class="nav-item dropdown" appDropdown
             (click)="isSettingsCollapsed = !isSettingsCollapsed"

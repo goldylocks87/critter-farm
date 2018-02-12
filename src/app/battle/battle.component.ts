@@ -13,15 +13,25 @@ import { BattleService } from './battle.service';
 })
 export class BattleComponent implements OnInit {
 
-  challenger = new Critter('111111111111');
-  opponent = new Critter('000000000000');
+  challenger;
+  opponent;
 
-  constructor(private battle: BattleService) {
-    this.battle.challenger = this.challenger;
-    this.battle.opponent = this.opponent;
-  }
+  constructor(private battle: BattleService) { }
 
   ngOnInit() {
+  }
+
+  onSelect( isChallenger: boolean, critter: Critter ) {
+
+    console.log( isChallenger, critter );
+
+    if( isChallenger ) {
+      this.challenger = critter;
+      this.battle.challenger = this.challenger;
+    } else {
+      this.opponent = critter;
+      this.battle.opponent = this.opponent;
+    }
   }
 
 }
