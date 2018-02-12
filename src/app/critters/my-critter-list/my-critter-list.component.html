@@ -1,31 +1,8 @@
-<div class="container">
+<div class="card-deck">
 
-  <div class="row mb-4">
-    <h2>My Profile</h2>
-  </div>
-
-  <div class="row">
-    <div class="col-md-3" *ngFor="let critter of critters; let i = index">
-
-      <div class="card mb-4 box-shadow chub">
-
-        <div class="card-header">
-          {{ critter.name }}
-        </div>
-
-        <div class="card-img-top" style="text-align: center" >
-          <app-critter [critter]="critter"></app-critter>
-        </div>
-
-        <div class="card-body">
-          <p class="card-text">
-            <span>{{ critter.sex }}</span><br>
-            <span style="color: grey; font-size: 12px;">{{ critter.dna }}</span>
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
+  <app-critter-card
+      *ngFor="let critter of critters; let i = index"
+      [critter]="critter"
+      style="max-width: 15rem;"></app-critter-card>
 
 </div>

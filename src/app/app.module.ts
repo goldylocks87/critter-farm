@@ -30,6 +30,9 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { BattleComponent } from './battle/battle.component';
 import { BattleCardComponent } from './battle/battle-card/battle-card.component';
+import { OpponentSelectionModalComponent } from './battle/opponent-selection-modal/opponent-selection-modal.component';
+import { CritterCardComponent } from './critters/critter-card/critter-card.component';
+import { ProfileComponent } from './users/profile/profile.component';
 
 
 @NgModule({
@@ -47,7 +50,10 @@ import { BattleCardComponent } from './battle/battle-card/battle-card.component'
     SigninComponent,
     SignupComponent,
     BattleComponent,
-    BattleCardComponent
+    BattleCardComponent,
+    OpponentSelectionModalComponent,
+    CritterCardComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

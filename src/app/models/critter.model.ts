@@ -62,28 +62,32 @@ export class Critter {
 
     const move1 = new BattleMove();
     move1.name = 'Slap';
-    move1.damage = 8;
+    move1.damage = this.getRandomNum(10);
     move1.quantity = 10;
     movelist.push(move1);
 
     const move2 = new BattleMove();
     move2.name = 'Kick';
-    move2.damage = 15;
-    move2.quantity = 10;
+    move2.damage = this.getRandomNum(20);
+    move2.quantity = 5;
     movelist.push(move2);
 
     const move3 = new BattleMove();
     move3.name = 'Punch';
-    move3.damage = 10;
+    move3.damage = this.getRandomNum(10);
     move3.quantity = 10;
     movelist.push(move3);
 
     const move4 = new BattleMove();
     move4.name = 'Headbutt';
-    move4.damage = 28;
-    move4.quantity = 10;
+    move4.damage = this.getRandomNum(30);
+    move4.quantity = 3;
     movelist.push(move4);
 
     return movelist;
+  }
+
+  private getRandomNum( maxNum: number ): number {
+    return Math.floor( Math.random() * maxNum );
   }
 }

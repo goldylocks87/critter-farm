@@ -1,0 +1,26 @@
+<div class="card mb-4 box-shadow">
+  <div class="card-img-top text-center">
+    <app-critter [critter]="critter"></app-critter>
+  </div>
+
+  <span [hidden]="displayDetails"
+        class="text-center mb-2">{{ critter.name }}</span>
+
+    <div class="card-body" [hidden]="!displayDetails">
+
+        <h6 class="card-title">{{ critter.name }}</h6>
+
+        <p class="card-text">
+          {{ critter.name }} is a {{ critter.sex }} born on {{ critter.bday | date:'M/d/yy' }}.
+        </p>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="checkOut(i)">View</button>
+          </div>
+          <small class="text-muted">{{ calcAge(critter.bday) }}</small>
+        </div>
+
+    </div>
+
+</div>

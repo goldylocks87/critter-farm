@@ -10,20 +10,32 @@
 
   <div class="card-body">
 
+    <!-- HEALTH BAR -->
+    <div class="progress mb-2">
+      <div class="progress-bar {{ critter.battleInfo.totalLife >= 40 ? 'bg-success' : 'bg-danger' }}"
+            role="progressbar"
+            [style.width]="critter.battleInfo.totalLife + '%'">
+        {{ critter.battleInfo.totalLife }}
+      </div>
+    </div>
+
+    <!-- MOVE BUTTONS -->
     <div class="justify-content-between align-items-center">
       <div class="row">
         <div class="col col-md-6 pr-md-0">
           <button type="button"
                   class="btn btn-block btn-outline-secondary"
-                  (click)="doMove(critter.battleInfo.moves[0])" >
-            {{ critter.battleInfo.moves[0].name }}
+                  [disabled]="critter.battleInfo.moves[0].quantity <= 0"
+                  (click)="doMove(0)" >
+            ({{ critter.battleInfo.moves[0].quantity }}) {{ critter.battleInfo.moves[0].name }}
           </button>
         </div>
         <div class="col col-md-6">
           <button type="button"
                   class="btn btn-block btn-outline-secondary"
-                  (click)="doMove(critter.battleInfo.moves[1])" >
-            {{ critter.battleInfo.moves[1].name }}
+                  [disabled]="critter.battleInfo.moves[1].quantity <= 0"
+                  (click)="doMove(1)" >
+            ({{ critter.battleInfo.moves[1].quantity }}) {{ critter.battleInfo.moves[1].name }}
           </button>
         </div>
       </div>
@@ -31,27 +43,21 @@
         <div class="col col-md-6 pr-md-0">
           <button type="button"
                   class="btn btn-block btn-outline-secondary"
-                  (click)="doMove(critter.battleInfo.moves[2])" >
-            {{ critter.battleInfo.moves[2].name }}
+                  [disabled]="critter.battleInfo.moves[2].quantity <= 0"
+                  (click)="doMove(2)" >
+            ({{ critter.battleInfo.moves[2].quantity }}) {{ critter.battleInfo.moves[2].name }}
           </button>
         </div>
         <div class="col col-md-6">
           <button type="button"
                   class="btn btn-block btn-outline-secondary"
-                  (click)="doMove(critter.battleInfo.moves[3])" >
-            {{ critter.battleInfo.moves[3].name }}
+                  [disabled]="critter.battleInfo.moves[3].quantity <= 0"
+                  (click)="doMove(3)" >
+            ({{ critter.battleInfo.moves[3].quantity }}) {{ critter.battleInfo.moves[3].name }}
           </button>
         </div>
       </div>
       <!-- <small class="text-muted">{{ calcAge(critter.bday) }}</small> -->
-    </div>
-
-    <div class="progress mt-2">
-      <div class="progress-bar {{ critter.battleInfo.totalLife >= 40 ? 'bg-success' : 'bg-danger' }}"
-            role="progressbar"
-            [style.width]="critter.battleInfo.totalLife + '%'">
-        {{ critter.battleInfo.totalLife }}
-      </div>
     </div>
 
   </div>

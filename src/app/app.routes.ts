@@ -10,10 +10,12 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { BattleComponent } from './battle/battle.component';
+import { ProfileComponent } from './users/profile/profile.component';
 
 const appRoutes: Routes =[
   { path: '', redirectTo: '/critters', pathMatch: 'full' },
   { path: 'critters', component: CritterListComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'breed', component: BreedComponent },
   { path: 'mychubs', component: MyCritterListComponent },
   { path: 'battle', component: BattleComponent },

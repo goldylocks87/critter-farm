@@ -14,19 +14,18 @@ export class BattleCardComponent implements OnInit {
   @Input() critter: Critter;
   @Input() isChallenger: boolean;
 
-  life: number;
-  lifeBar: string;
-
   constructor(private battle: BattleService) {
 
   }
 
   ngOnInit() {
-    this.life = this.critter.battleInfo.totalLife;
-    this.lifeBar = this.life + '%';
+
   }
 
-  doMove( move: BattleMove ) {
+  doMove( index: number ) {
+
+    const move = this.critter.battleInfo.moves[index];
+    move.quantity--;
     console.log('~~~ move : ', move);
     this.battle.doMove( this.isChallenger, move.damage );
   }
